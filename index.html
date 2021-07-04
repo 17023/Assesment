@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -9,22 +10,43 @@
   </head>
 
   <body>
+
     <!--Navigation-->
-    <img src="images/image.png" alt="word..." style="width:100%;" class="image">
-    <img src="images/image2.png" alt="word..." style="width:100%;" class="image2">
+    <img alt="Computer Image" class="image" src="images/image.png" style="height:20rem; width:100%;">
+    <img alt="Computer Image" class="image2" src="images/image2.png" style="height:25rem; width:100%;">
     <nav>
       <div class="navText">PHONE HELP</div>
       <a href="helpPage">HELP</a>
     </nav>
-    <h2 class="changeword">word</h2>
+    <h2 class="headerText">Phone Help.</h2>
 
+    <!--Help button-->
     <a class="helpButton" href="helpPage.html">?</a>
 
+    <!--Popup-->
+    <div class="popup" id="popup">
+      <div class="centre">
+        <div class="popupContent">
+          <h2>WELCOME.</h2>
+          <hr>
+          <p>If you are confused about functioning this website, click the 'HELP' button in the navigation bar or the question mark button down the bottom. These buttons will lead you to a page that will break down how to use this website.</p>
+          <p>Click the button below to leave this message and carry on to the website.</p>
+          <div class="container">
+            <div class="centre">
+              <button class="buttons" onclick="buttonPopup()">CLICK HERE</button>
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <!--Padding around the page-->
     <div class="padding">
 
       <!--Description-->
       <div class="description">
-        <p>This website is designed to help you with... </p>
+        <p>This website is designed to help you with operating your mobile phone, whether it be a new device or something on your current device that you're struggling with. This website has two sections, the first has popular/useful apps that you may need help with, and the second is a quiz that you can take to determine your phone type to get specified instructions to operate pre-installed apps.</p>
         <br>
       </div>
       <br><hr><br>

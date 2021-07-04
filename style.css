@@ -1,19 +1,61 @@
-/*Whole page*/
+/*Padding: Top Right Bottom Left*/
+/*font-family: 'Lucida Sans', sans-serif;*/
+
+/*Whole/All page*/
 * {
   box-sizing: border-box;
   color: #18191A;
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 18px;
+  font-size: 17px;
   margin: 0;
   padding: 0;
+}
+
+/*Centre aspects in div's with the class centre*/
+.centre {
+  left:50%;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%)
+}
+
+/*Around buttons*/
+.container { 
+  height: 3rem;
+  position: relative;
+}
+
+/*Buttons*/
+.buttons {
+  background-color: #FEFEFE;
+  border: 0.5px solid #18191A;
+  border-radius: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Lucida Sans', sans-serif;
+  padding: 0.625rem;
+  text-align: center;
+  transition: all 0.2s ease-out;
+  user-select: none;
+}
+
+/*Buttons - when hovered*/
+.buttons:hover {
+  background: #ADBABD;
+  transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
 }
 
 /*HOME PAGE*/
 
 /*Header image - smaller screens*/
 .image {
-  filter: blur(1px);
-  -webkit-filter: blur(1px);
+  filter: blur(0.0625rem);
+  -webkit-filter: blur(0.0625rem);
 }
 
 /*Header image - larger screens*/
@@ -28,7 +70,7 @@ nav {
   background-color: #18191A4D;
   color: #FEFEFE;
   height: 2.4rem;
-  /*overflow: hidden;*/
+  overflow: hidden;
   position: absolute;
   top: 0;
   width: 100%;
@@ -58,8 +100,9 @@ nav a {
 nav a:hover {border-bottom: 0.25rem solid #1A1739;}
 
 /*Header - text on image*/
-.changeword {
+.headerText {
   color: #F3F3F3;
+  font-family: 'Lucida Sans', sans-serif;
   font-size: 2rem;
   margin: auto;
   position: absolute;
@@ -68,29 +111,37 @@ nav a:hover {border-bottom: 0.25rem solid #1A1739;}
   width: 100%;
 }
 
-/*Help button - bottom right*/
-.helpButton {
-  background: #1A1739;
-  border-radius: 50%;
-  bottom: 0.9rem;
-  color: #FFF;
-  font-size: 2rem;
-  height: 3.2rem;
-  line-height: 3.2rem;
-  opacity: 0.65;
+/*Popup - black background*/
+.popup {
+  background: rgba(24, 25, 26, 0.6);
+  display: none;
+  height: 100%;
+  left: 0;
   position: fixed;
-  right: 0.9rem;
-  text-align: center;
-  text-decoration: none;
-  transition: 0.3s all ease-in-out;
-  width: 3.2rem;
+  top: 0;
+  width: 100%;
   z-index: 3;
 }
 
-/*Help button when hovered*/
-.helpButton:hover {
+/*Popup - white background*/
+.popupContent {
+  background: #FEFEFE;
   opacity: 1;
-  transform: scale(1.2);
+  width: 100%;
+  z-index: 4;
+}
+
+/*Popup - header*/
+.popupContent h2 {
+  font-family: 'Lucida Sans', sans-serif;
+  font-size: 1.6rem;
+  padding: 0.7rem 0.9rem;
+}
+
+/*Popup - text*/
+.popupContent p {
+  font-size: 0.95rem;
+  padding: 0.7rem 1.4rem;
 }
 
 /*Description*/
@@ -138,10 +189,35 @@ nav a:hover {border-bottom: 0.25rem solid #1A1739;}
 .appName {
   background-color: #FEFEFE;
   color: #18191A;
-  padding: 15px;
+  padding: 0.9375rem;
   position: relative;
   text-align: center;
   z-index: 1;
+}
+
+/*Help button - bottom right*/
+.helpButton {
+  background: #1A1739;
+  border-radius: 50%;
+  bottom: 0.9rem;
+  color: #FEFEFE;
+  font-size: 2rem;
+  height: 3.2rem;
+  line-height: 3.2rem;
+  opacity: 0.65;
+  position: fixed;
+  right: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  transition: 0.3s all ease-in-out;
+  width: 3.2rem;
+  z-index: 2;
+}
+
+/*Help button when hovered*/
+.helpButton:hover {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 /*SCREEN SIZE CHANGES*/
@@ -153,12 +229,12 @@ nav a:hover {border-bottom: 0.25rem solid #1A1739;}
     width: 49.9999%;
     
   }
-  .appName{font-size: 12px;}
+  .appName{font-size: 0.75rem;}
 }
 
 /*When the screen is at least 650px wide*/
 @media screen and (min-width: 650px) {
-  .padding {padding: 2rem 3rem 1rem 3rem;}
+  .padding {padding: 1.5rem 3rem 1rem 3rem;}
 }
 
 /*When the screen is at least 700px wide*/
@@ -174,13 +250,14 @@ nav a:hover {border-bottom: 0.25rem solid #1A1739;}
 @media screen and (min-width: 900px) {
   .image2 {display: block;}
   .image {display: none;}
-  .padding {padding: 3rem 5rem 1rem 5rem;}
+  .padding {padding: 2.5rem 5rem 1rem 5rem;}
 }
 
 /*When the screen is at least 1200px wide*/
 @media screen and (min-width: 1200px) {
-  .padding {padding: 4rem 7rem 1rem 7rem;}
+  * {font-size: 20px;}
+  .padding {padding: 2rem 7rem 1rem 7rem;}
+  .description {
+    text-align: center;
+    }
 }
-
-/*font-family: 'Lucida Sans', sans-serif;*/
-/*Padding: Top Right Bottom Left*/
