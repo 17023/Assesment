@@ -183,7 +183,11 @@ nav a:hover {border-bottom: 0.25rem solid #1A1739;}
 }
 
 /*Apps - image when hovered*/
-.app img:hover {transform: scale(1.3)}
+.app img:hover {
+  transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -webkit-transform:scale(1.3);
+  }
 
 /*Apps - text*/
 .appName {
@@ -218,6 +222,68 @@ nav a:hover {border-bottom: 0.25rem solid #1A1739;}
 .helpButton:hover {
   opacity: 1;
   transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -webkit-transform: sclae(1.2);
+}
+
+/*HELP PAGE*/
+
+/*How to use button - header*/
+.buttonHelp h2 {
+  float: left;
+  font-family: 'lucida Sans', sans-serif;
+  font-size: 20px;
+}
+
+/*How to use button - text*/
+.buttonHelp p {padding-left: 1rem;}
+
+/*How to use a button - example*/
+#examplePopup {
+  background-color: #18191A;
+  border-radius: 2px;
+  bottom: 30px;
+  color: #FFF;
+  font-size: 17px;
+  left: 50%;
+  margin-left: -125px;
+  min-width: 250px;
+  padding: 16px;
+  position: fixed;
+  text-align: center;
+  visibility: hidden;
+  z-index: 1;
+}
+
+/*Displays the popup*/
+#examplePopup.show {
+  animation: fadein 0.5s, fadeout 1.0s 1.5s;
+  visibility: visible;
+  -webkit-animation: fadein 0.5s, fadeout 1.0s 1.5s;
+}
+
+/*Popup - fades in after button clicked*/
+@keyframes fadein {
+  from {bottom: 0; opacity: 0;}
+  to {bottom: 30px; opacity: 1;}
+}
+
+/*Popup - fades in after button clicked(webkit = Safari, Chrome)*/
+@-webkit-keyframes fadein {
+  from {bottom: 0; opacity: 0;} 
+  to {bottom: 30px; opacity: 1;}
+}
+
+/*Popup - fades in after button clicked*/
+@keyframes fadeout {
+  from {bottom: 30px; opacity: 1;}
+  to {bottom: 0; opacity: 0;}
+}
+
+/*Popup - fades out after button clicked(webkit = Safari, Chrome)*/
+@-webkit-keyframes fadeout {
+  from {bottom: 30px; opacity: 1;} 
+  to {bottom: 0; opacity: 0;}
 }
 
 /*SCREEN SIZE CHANGES*/
