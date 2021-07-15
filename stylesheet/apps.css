@@ -1,0 +1,43 @@
+.appHeader {
+  padding-top: 4rem;
+  text-align: center;
+  font-size: 38px;
+  font-family: 'Lucida Sans', sans-serif;
+}
+
+.aroundImage11{
+  padding-left: 1rem;
+  padding-top: 2rem;
+}
+.image11 {
+  width: 18rem;;
+  height: 36rem;
+  border: 1px solid #1A1739;
+  border-radius: 0.2rem;
+}
+
+.howTo {
+  float: left;
+  left: 0;
+}
+
+.columnButton {
+  background-color: rgb(254, 254, 254);
+  border: 0.5px solid rgb(24, 25, 26);
+  border-radius: 0.2rem; /*radius of divs corners*/
+  cursor: pointer; /**/
+  display: inline-block; /**/
+  font-family: 'Lucida Sans', sans-serif;
+  padding: 0.625rem;
+  text-align: center;
+  transition: all 0.2s ease-out; /*transition will effect all .buttons properities, will take 0.2s and have a slow end*/
+  user-select: none; /*prevents the div from being highlighted*/
+  -ms-user-select: none;
+  -webkit-transition: all 0.2s ease-out;
+  -webkit-user-select: none;
+}
+
+.wordy {
+  display: none;
+}
+
