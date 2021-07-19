@@ -13,3 +13,8 @@ function buttonPopup() { //
   x.className = "show";
   setTimeout(function(){ x.className = x.className.replace("show", "");}, 2500);
 }
+
+function facebookHomePage() {
+  document.getElementById("facebookHomePage").style.display = "block";
+  document.getElementById("beginningText").style.display = "none";
+}

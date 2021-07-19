@@ -1,3 +1,7 @@
+/*Padding: Top Right Bottom Left Padding: Top Right&Left Bottom Padding: Top&Bottom Right&Left*/
+/*font-family: 'Lucida Sans', sans-serif;*/
+
+/*App name*/
 .appHeader {
   padding-top: 4rem;
   text-align: center;
@@ -5,39 +9,62 @@
   font-family: 'Lucida Sans', sans-serif;
 }
 
-.aroundImage11{
-  padding-left: 1rem;
-  padding-top: 2rem;
+/*App description*/
+.appDescription {
+  text-align: center;
+  padding: 0.4rem 14rem;
 }
-.image11 {
-  width: 18rem;;
-  height: 36rem;
+
+/*Padding around image map*/
+.imageMap {
+  padding: 1rem;
+}
+
+/*Image of the image map*/
+.imageMapImage {
+  width: 45vw;
+  max-width: 100%;
   border: 1px solid #1A1739;
   border-radius: 0.2rem;
 }
 
-.howTo {
-  float: left;
-  left: 0;
+/*Co-ordinates in the map*/
+.imageMap area {
+  cursor: pointer;
 }
 
-.columnButton {
-  background-color: rgb(254, 254, 254);
-  border: 0.5px solid rgb(24, 25, 26);
-  border-radius: 0.2rem; /*radius of divs corners*/
-  cursor: pointer; /**/
-  display: inline-block; /**/
+/*Information box*/
+.box {
+  border: 1px solid #1A1739;
+  float: right;
+  width: 45vw;
+  border-radius: 0.2rem;
+}
+
+/*Information box - padding*/
+.insideBox {
+  padding: 1rem 1rem 0;
+}
+
+/*Information box - header*/
+.insideBox h3 {
   font-family: 'Lucida Sans', sans-serif;
-  padding: 0.625rem;
   text-align: center;
-  transition: all 0.2s ease-out; /*transition will effect all .buttons properities, will take 0.2s and have a slow end*/
-  user-select: none; /*prevents the div from being highlighted*/
-  -ms-user-select: none;
-  -webkit-transition: all 0.2s ease-out;
-  -webkit-user-select: none;
+  padding-bottom: 0.5rem;
+  font-size: 22px;
 }
 
-.wordy {
+.phoneText {
   display: none;
 }
 
+/*Information box - text*/
+.insideBox p {
+  padding-top: 0.4rem;
+  padding-left: 0.6rem;
+  font-size: 15px;
+}
+
+.areaDescription {
+  display: none;
+}
