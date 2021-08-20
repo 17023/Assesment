@@ -4,64 +4,481 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phone Help</title>
+    <title>Phone Help</title> <!--Text displayed on the broweser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/phone.png"> <!--Icon displayed on the browser tab-->
     <link href="/stylesheet/style.css" rel="stylesheet" type="text/css"/> <!--Original stylesheet used one all pages-->
     <link href="/stylesheet/apps.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for the apps used-->
-    <link href="/stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/>
-    <script src="../script.js" type="text/javascript"></script> 
+    <link href="/stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
+    <script src="../script.js" type="text/javascript"></script>
   </head>
 
   <body>
 
     <!--Navigation-->
     <nav>
-      <div class="navText">PHONE HELP</div>
-      <a href="../helpPage.html">HELP</a>
-      <a href="../index.html">HOME</a>
+      <div class="navText">PHONE HELP</div> <!--Header in the nav bar-->
+      <a href="../helpPage.html">HELP</a> <!--Link to home page-->
+      <a href="../index.html">HOME</a> <!--Link to help page-->
     </nav>
 
-    <!--Description-->
-    <h1 class="appHeader" style="color:#4267B2;">Facebook.</h1>
-    <p class="appDescription">This is a social media app which you can download from the app store or google play. This app allows your to post updates and photos for your friends and family to see.</p>
+    <!--Description of the app-->
+    <h1 class="appHeader" style="color: #4267B2;">Facebook.</h1>
+    <p class="appDescription">This is a social media app that you can download from the app store or google play. This app allows you to post updates and photos for your friends and family to see.</p>
 
     <!--Help button-->
     <a class="helpButton" href="../helpPage.html">?</a>
 
-    <div class="imageMap">
+    <!--Image Map & Descriptions on different functions-->
+    <div class="imageMap" id="imageMap">
 
-      <div class="aroundBox">
-        <div class="box">
-          <div class="insideBox">
-            <h3 id="beginningText">How to use this page:</h3>
-            
+      <!--Information box - Changes the info depending on what part of the image is clicked-->
+      <div class="box" style="float: right;">
+        <div class="insideBox">
+
+          <div id="fbBeginningText">
+            <h3>How to use this page:</h3> <!--Explanation on how to use the page-->
             <hr>
-            <p class="comText" id="beginningText">Hover you mouse over different parts of the image, this will display a few words explaining what this function does. If you Click that part of the image it will show a more in-depth description about what this function does.<p>
-            <p class="phoneText" id="beginningText">Different parts of this image is clickable. Click the parts your uncertain about to bring up an in-depth description on that part.</p>
+            <!--Two different explainations for if the user is user a laptop/computer or touch screen device-->
+            <p class="largeScreenText">Hover your mouse over different parts of the image to the left this will display a couple of words explaining what this function does. If you click that part of the image, a description of that function will show in place of this box. If necessary, the explanations will also contain an image as an example.<p>
+            <p class="smallScreenText">Different parts of the following image are clickable. You can click the functions you are uncertain about, which will bring up a description of that function, hopefully helping you solve your questions. If necessary, the explanations will also contain an image as an example.</p>
+            <hr>
+            <!--Button if image map failed-->
+            <p class="padding2">If the image isn't working, click the following button to bring up a less interactive/detailed version:</p>
+            <p class="gap">...</p>
+            <div class="container">
+              <div class="centre">
+                <button class="buttons" onclick="fbimageMapFailed()">Click Here</button>
+              </div>
+            </div>
             <br>
-            <p class="areaDescription" id="facebookHomePage">profile</p>
           </div>
+
+          <!--Different section explanations that are displayed when the user clicks the corresponding coordinates on the image map. Some sections contain images for extra details or links to the Facebook help page if necessary.-->
+          <div class="areaDescription" id="fbHomePage">
+            <h3>Home Page.</h3>
+            <hr>
+            <p class="aboutFunction">The image shown is showing the Facebook home page. The home page is where you can find the latest updates from your friends and family, make posts and join rooms.</p>
+            <p class="aboutFunction">The page at the top that is blue is the page you're currently on, this can help you distinguish what one you have open.</p>
+            <img src="/images/fbTopButtons.jpg" class="descriptionImage" alt="Top buttons">
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbFriendRequests">
+            <h3>Friend Requests.</h3>
+            <hr>
+            <p class="aboutFunction">The friend request page is where you you can find four of the following aspects:</p>
+            <img src="/images/fbFriendRequests.jpg" class="descriptionImage" alt="Friend Requests">
+            <p class="aboutFunction"><b>Requests:</b> If you click this button, a page will be displayed with the people who wish to be friends with you. You have the option to choose whether you want to accept or decline their request, don't worry though if you choose to decline their requests they won't be notified.</p>
+            <p class="aboutFunction"><b>All Friends:</b> This button will bring you to a page of all the people you are friends with on Facebook. On this page you can choose to sort your friends either by default, newest or oldest. You can also search through your friends, if your trying to find someone.</p>
+            <p class="aboutFunction"><b>Search:</b> The search button functions the same way as the one on the home page, for further detail click the search button on the image below.</p>
+            <p class="aboutFunction"><b>People You May Know:</b> Below this header is people you may know that have a Facebook account, they typically appear when you have mutual friends. Clicking "Add Friends" will send a requests to them and clicking "Remove" will remove them for this page.</p>
+            <br>
+          </div> 
+
+          <div class="areaDescription" id="fbNotifications">
+            <h3>Notifications.</h3>
+            <hr>
+            <p class="aboutFunction">This page has a all notifications you recieve from Facebook. You can get notifications for friend requests, comments on your post and when other people tagging/mentioning you in their post. Notifications that have a light blue tint to their background means you have not seen it and clicking the notification will make this disapear.</p>
+            <img src="/images/fbNotifications.png" class="descriptionImage" alt="Notifications">
+            <p class="aboutFunction">If you click the three dots next to the notifications you will be brought up with these options, allowing you to delete the notifications, customise your notifications and report any issues you have.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbSettings">
+            <h3>Settings.</h3>
+            <hr>
+            <p class="aboutFunction">Settings help you control multiple things on your Facebook account whether it be your friends, groups your in, memories of past posts or Events. This page has alot of information that would be slightly confusing for a few words to explain. Clicking the following button will bring you to Facebooks help page that will provide you with further details.</p>
+            <!--Link to Facebook help page-->
+            <div class="container">
+              <div class="centre">
+                <a href="https://www.facebook.com/help" target="_blank">
+                  <button class="buttons">More Help.</button>
+                </a>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbSearch">
+            <h3>Search.</h3>
+            <hr>
+            <p class="aboutFunction">The search button is pretty simple to use, clicking it will display your keyboard. You are then able to search for people you want to friend, groups you want to join or pages to like/follow. Your recent searches and pages you have visted will be displayed under the search bar, to clear these click "See All" then "Clear All".</p>
+            <br>
+          </div>  
+
+          <div class="areaDescription" id="fbMessenger">
+            <h3>Messenger.</h3>
+            <hr>
+            <p class="aboutFunction">Messenger is facebooks messenging app, clicking the button will bring to the that app. The following button will bring you to a page that has instructions for that app.</p>
+            <!--Link to the Messenger page on this website-->
+            <div class="container">
+              <div class="centre">
+                <a href="..."> <!---->
+                  <button class="buttons">Click Here.</button>
+                </a>
+              </div>
+            </div>
+            <br>
+          </div> 
+
+          <!--The amount of information in this section made the page extensively long, so there are buttons to navigate between three different parts of a Facebook profile.-->
+          <div class="areaDescription" id="fbProfile">
+            <h3>Profile.</h3>
+            <hr>
+            <p class="aboutFunction">Your profile is how other Facebook users perceive you. You are able to change your profile picture, cover image and details that are describe you.</p>
+            <p class="aboutFunction">Use the following buttons to navigate between the different functions of your profile.</p>
+            <div id="profileBeginning">
+              <!--Buttons to either go back or forward between parts.-->
+              <div class="container">
+                <div class="centre">
+                  <button onclick="previous1()" class="directionButtons">&#8249;</button>
+                  <button onclick="next1()" class="directionButtons">&#8250;</button>
+                </div>
+              </div>
+              <!--Example of where each of the parts relate to.-->
+              <img src="/images/fbProfileExample.png" class="descriptionImage" alt="Profile Example">
+            </div>
+            <div id="profileOne">
+              <!--Buttons to either go back or forward between parts.-->
+              <div class="container">
+                <div class="centre">
+                  <button onclick="previous2()" class="directionButtons">&#8249;</button>
+                  <button onclick="next2()" class="directionButtons">&#8250;</button>
+                </div>
+              </div>
+              <div class="coverImage" id="coverImage">
+                <p class="aboutFunction"><b style="font-size: 22px;">Cover Image: </b>This is the image that is displayed above your profile picture. People are able to view it when they vist your page.</p> <!--Short description of a cover image.-->
+                <img src="/images/fbProfileCover.jpg" class="descriptionImage" alt="Cover Image">
+                <!--Description of each button in the image above.-->
+                <p class="aboutFunction"><b>View Profile Cover: </b>This will display your image in full screen, you are then able to see what people commented on it when you posted it and who liked it. To exit this photo, simply click your phones back arrow.</p>
+                <p class="aboutFunction"><b>Upload Photo: </b>When you click this button you are able to change the image to one in your phones gallery. You may want to take into consideration that when you change your image Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>Select Photo on Facebook: </b>This button also allows you to pick a cover image, however these photos are ones that you have uploaded to Facebook.</p>
+                <p class="aboutFunction"><b>Create Cover Collage: </b>This allows you to pick multiple photos that will then be placed into a collage for your cover image.</p>
+                <p class="aboutFunction"><b>Select Artwork: </b>These are a selection of cover images you can use that has been provided by Facebook.</p>
+              </div>
+            </div>
+            <div id="profileTwo">
+              <!--Buttons to either go back or forward between parts.-->
+              <div class="container">
+                <div class="centre">
+                  <button onclick="previous3()" class="directionButtons">&#8249;</button>
+                  <button onclick="next3()" class="directionButtons">&#8250;</button>
+                </div>
+              </div>
+              <div class="profilePicture" id="profilePicture">
+                <p class="aboutFunction"><b style="font-size: 22px;">Profile Picture: </b>This picture is displayed in two places, the first being on your profile, and the second is when you make a post, like/comment on someones post.</p> <!--Short description of what a profile picture is, and where it is displayed throughout Facebook.-->
+                <img src="/images/fbProfilePicture.jpg" class="descriptionImage" alt="Profile Picture">
+                <!--Description of each button in the image above.-->
+                <p class="aboutFunction"><b>Add Frame: </b>This allows you to place a frame on your profile picture. When you click this button you will be brought to a page with frames used by your friends and a search bar for you to find new frames.</p>
+                <p class="aboutFunction"><b>Take New Profile Video: </b>Taking a new profile video will display your camera for you to take a video to use for you profile picyure. You may want to take into consideration that when you change your video Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>Select Profile Video: </b>Clicking this will allow you to add a video to your profile picture. You may want to take into consideration that when you change your video Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>Select Profile Picture: </b>Clicking this will allow you to change your profile picture. You may want to take into consideration that when you change your image Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>View Profile Picture: </b>This will display your image in full screen, you are then able to see what people commented on it when you posted it and who liked it. To exit this photo, simply click your phones back arrow.</p>
+                <p class="aboutFunction"><b>Make Avatar Profile Picture: </b>This allows you to dress up an animated character that looks like you to use as your profile picture.</p>
+              </div>
+            </div>
+            <div id="profileThree">
+              <!--Buttons to either go back or forward between parts.-->
+              <div class="container">
+                <div class="centre">
+                  <button onclick="previous4()" class="directionButtons">&#8249;</button>
+                  <button onclick="next4()" class="directionButtons">&#8250;</button>
+                </div>
+              </div>
+              <div class="aboutProfile" id="aboutProfile">
+                <p class="aboutFunction"><b style="font-size: 22px;">About You: </b>Your about you section of your profile has many features that you can choose to fill out or not. </p>
+                <img src="/images/fbProfileAbout.jpg" class="descriptionImage" alt="About You">
+                <p class="aboutFunction">You are able to display where you work/worked, schools you attended, places lived, contact information, gender, birthday, who your interested in, other names you use, relationships and family members. You can change these as many times as you would like, as well as changing who can view this information whether it be to the public, your friends, friends and their friends or only yourself</p> <!--What you can change in the about you part-->
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbWritePost">
+            <h3>Write Post.</h3>
+            <hr>
+            <p class="aboutFunction">When you click the "What's on your mind?" box on your home page, you are brought to a new area that allows you to type or click on of the following options.</p>
+            <p class="gap">...</p>
+            <!--When you click the Write post button the following options appear. The circles are a similar colour to each option, because adding an image made the page to long.-->
+            <p class="aboutFunction"><b style="color: #45BD63">&#9711;  </b>Photo/Video: Attach a photo or video to your post.</p>
+            <p class="aboutFunction"><b style="color: #1878F3">&#9711;  </b>Tag People: Mentioning other people on your post will notify them and be displayed on their profile meaning their friends can like uyour post.</p>
+            <p class="aboutFunction"><b style="color: #F0C257">&#9711;  </b>Feeling/Activity: Share with your friends how you are feeling or what your doing at the moment.</p>
+            <p class="aboutFunction"><b style="color: #F5533E">&#9711;  </b>Check In: Add a location to your post, to share where you have been with your friends.</p>
+            <p class="aboutFunction"><b style="color: #E4304E">&#9711;  </b>Live Video: Create a live broadcast for people to watch in real time.</p>
+            <p class="aboutFunction"><b style="color: #49CFBB">&#9711;  </b>Background Colour: Change the background of your post, this can include the ones with a solid colour or ones with different shapes.</p>
+            <p class="aboutFunction"><b style="color: #4699FF">&#9711;  </b>Camera: Open the camera to take a picture or video to post.</p>
+            <p class="aboutFunction"><b style="color: #34B5A3">&#9711;  </b>GIF: Select a moving image to post.</p>
+            <p class="aboutFunction"><b style="color: #F3425F">&#9711;  </b>Ask for Recommendations: Ask your friends for recommendations for different activities/restaurants/etc in different cities/towns/regions.</p>
+            <p class="aboutFunction"><b style="color: #FF66BF">&#9711;  </b>Raise Money: Raise money for your friends, someone else or organisation you would like.</p>
+            <p class="aboutFunction"><b style="color: #EB2B4B">&#9711;  </b>Host a Q&A: Get your friends to ask questions about a topic and you can answer the ones choose to.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbCreateRoom">
+            <h3>Create Room.</h3>
+            <hr>
+            <p class="aboutFunction">Create a video chat for your Facebook friends to join or a selected list of people. When you create a room it will be displayed at the top of your homepage, which others can join in it. For more informations please click the following button.</p>
+            <!--Link to Facebook help page-->
+            <div class="container">
+              <div class="centre">
+                <a href="https://www.facebook.com/help/2624675161136855/" target="_blank">
+                  <button class="buttons">More Help.</button>
+                </a>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbPostStory">
+            <h3>Post Story.</h3>
+            <hr>
+            <p class="aboutFunction">Stories are a way to post photos, short video, voting polls and more for a limited amount of time. Stories are avaliable for your friends to see for 24 hours, after this time it will disapear. The following features are what type of stories you can post.</p>
+            <p class="aboutFunction"><b>Text: </b>This is just plain text on a coloured background of your choice. You are also able to change the font of your text.</p>
+            <p class="aboutFunction"><b>Music: </b>Select a song to play while your friends view your story, you can also add text, stickers and colours.</p>
+            <p class="aboutFunction"><b>Green Screen: </b>This alloes you to place different backgrounds behind you. After taking the photo or video you can decorate it with other features.</p>
+            <p class="aboutFunction"><b>Boomerang: </b>This is very short video that is played in a constant loop.</p>
+            <p class="aboutFunction"><b>Selfie: </b>Take a photo of yourself or someone your with, that has a filter on top. A filter is like an accessory that your camera places on you in your phone.</p>
+            <p class="aboutFunction"><b>Poll: </b>This allows you to post a voting poll where you can ask questions, preferences or something that can be answered with two options.</p>
+            <p class="aboutFunction"><b>Mood: </b>This is posting GIFs that have been categorised into different types of moods.</p>
+            <img>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbViewFriendsStory">
+            <h3>View friends story.</h3>
+            <hr>
+            <p class="aboutFunction">When your friends have posted a story it will be displayed at the top of your homepage. You are able to see their post without clicking it, however, for a more clearer view or if your friend has posted more than one story you will have to click it. When on it you can reply or react to it, and if you would like to exit it there is a cross button in the top right that closes the story.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="fbFriendsPost">
+            <h3>Friends Post.</h3>
+            <hr>
+            <p class="aboutFunction">When your friends post something new on Facebook it will be displayed on your home page. These posts can include; photos, videos, links or simply just text. Your friends profile picture, name and when they made the post will be displayed on the top right of their post. They are also able to tag other people, or a location they were at, this will be displayed next to their name.</p>
+            <p class="aboutFunction">Sometimes you may see posts from people you aren't friends with, this is becasue a friend of yours has either been tagged or commented on their post.</p>
+            <img src="/images/fbFriendsPost.png" class="descriptionImage" alt="Friends Post">
+            <p class="aboutFunction">There are a couple of ways for you to interact with your friends post including:</p>
+            <p class="aboutFunction"><b>- </b>The thumbs up button allows you to like your their post, if you hold down this button other options will be displayed for you. You are also able to love, laugh, cry, etc about their post, these are displayed as different emojis.</p>
+            <p class="aboutFunction"><b>- </b>Clicking the comment button allows you to comment on someones post, this can be with text, GIF or a sticker which are all located above your keyboard.</p>
+            <p class="aboutFunction"><b>- </b>Sharing your post to others will send this via messenger, you are able to send this to any friend you like.</p>
+            <br>
+          </div>
+
         </div>
       </div>
 
-      <!-- Image Map Generated by http://www.image-map.net/ -->
-      <img src="/images/facebookHome.jpg" usemap="#image-map" class="imageMapImage" alt="Facebook home page">
+      <!--Image in the image map. The "usemap" links the image to the map.-->
+      <img src="/images/fbHome.jpg" usemap="#image-map" class="imageMapImage" alt="Facebook home page">
 
       <!--Image map made on "https://www.image-map.net/"-->
+      <!--Each area is a different button on the home page, which is why the coords differ. The "data-target" links the area to its description and the "onclick" gets rid of the text that is dispalyed in the beginning when an area is clicked.-->
       <map name="image-map">
-        <area alt="Home Page" title="Home Page" coords="12,150,256,252" shape="rect" onclick="facebookHomePage()">
-        <area alt="Friend Requests" title="Friend Requests" coords="289,150,519,256" shape="rect">
-        <area alt="Notifications" title="Notifications" coords="571,147,796,253" shape="rect">
-        <area alt="Settings" title="Settings" coords="827,147,1060,253" shape="rect">
-        <area alt="Search" title="Search" coords="878,62,52" shape="circle">
-        <area alt="Messenger" title="Messenger" coords="1006,61,52" shape="circle">
-        <area alt="Profile" title="Profile" coords="85,350,57" shape="circle">
-        <area alt="Write Post" title="Write Post" coords="153,299,1055,399" shape="rect">
-        <area alt="Add To Post" title="Add To Post" coords="4,440,1076,534" shape="rect">
-        <area alt="Create Room" title="Create Room" coords="33,666,324,773" shape="rect">
-        <area alt="Create Story" title="Create Story" coords="41,864,343,1430" shape="rect">
-        <area alt="View Friends Story" title="View Friends Story" coords="352,862,665,1432" shape="rect">
-        <area alt="Friends Post" title="Friends Post" coords="0,1506,1078,2127" shape="rect">
+        <area alt="Home Page" title="Home Page" coords="12,150,256,252" shape="rect" class="fbImageMap" data-target="fbHomePage" onclick="fbBeginningText()"/>
+        <area alt="Friend Requests" title="Friend Requests" coords="289,150,519,256" shape="rect" class="fbImageMap" data-target="fbFriendRequests" onclick="fbBeginningText()"/>
+        <area alt="Notifications" title="Notifications" coords="571,147,796,253" shape="rect" class="fbImageMap" data-target="fbNotifications" onclick="fbBeginningText()"/>
+        <area alt="Settings" title="Settings" coords="827,147,1060,253" shape="rect" class="fbImageMap" data-target="fbSettings" onclick="fbBeginningText()"/>
+        <area alt="Search" title="Search" coords="878,62,52" shape="circle" class="fbImageMap" data-target="fbSearch" onclick="fbBeginningText()"/>
+        <area alt="Messenger" title="Messenger" coords="1006,61,52" shape="circle" class="fbImageMap" data-target="fbMessenger" onclick="fbBeginningText()"/>
+        <area alt="Profile" title="Profile" coords="85,350,57" shape="circle" class="fbImageMap" data-target="fbProfile" onclick="fbBeginningText()"/>
+        <area alt="Write Post" title="Write Post" coords="153,299,1055,399" shape="rect" class="fbImageMap" data-target="fbWritePost" onclick="fbBeginningText()"/>
+        <area alt="Create Room" title="Create Room" coords="33,666,324,773" shape="rect" class="fbImageMap" data-target="fbCreateRoom" onclick="fbBeginningText()"/>
+        <area alt="Post Story" title="Post Story" coords="41,864,343,1430" shape="rect" class="fbImageMap" data-target="fbPostStory" onclick="fbBeginningText()"/>
+        <area alt="View Friends Story" title="View Friends Story" coords="352,862,665,1432" shape="rect" class="fbImageMap" data-target="fbViewFriendsStory" onclick="fbBeginningText()"/>
+        <area alt="Friends Post" title="Friends Post" coords="0,1506,1078,2127" shape="rect" class="fbImageMap" data-target="fbFriendsPost" onclick="fbBeginningText()"/>
       </map>
+    </div>
+  
+    <!--Image map failed-->  
+    <div class="imageMapFailed" id="fbTable">
+
+      <div class="box" style="float: right;">
+        <div class="insideBox">
+          <h3>Image failed:</h3>
+          <hr>
+          <!--Explaning the that you will still recieve the same amount of imformation just less interactive when the image map failed.-->
+          <p class="padding2">The image was supposed to give you a detailed explanation of different parts of Facebook when you clicked certain features on the image. This page gives you the same amount of information, but instead of you clicking the image, the different sections are shown, which will display more information when you click the title. When you click the section again it will close, don't worry you can open and close the sections as many times as you want.</p>
+          <hr>
+          <!--Image of the home page, casue they are no longer clicking the image-->
+          <p class="padding2"><b>Home Page:</b></p>
+          <img src="/images/fbHome.jpg" class="descriptionImage" alt="Home Page">
+          <hr>
+          <!--Allowing the user to go back to the previous page if they want.-->
+          <p class="padding2">Accidentally clicked the button or want to try the image again, click this button to bring you back to the previous page:</p>
+          <p class="gap">...</p>
+          <div class="container">
+            <div class="centre">
+              <button class="buttons" onclick="fbGoBack()">Click Here</button> <!--Try image map again-->
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <p class="gap">...</p>
+
+      <div class="box">
+        <div class="insideBox">
+
+          <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
+          <button class="accordion"><h3>Home Page</h3></button>
+          <div class="section">
+            <p class="aboutFunction">The image shown is showing the Facebook home page. The home page is where you can find the latest updates from your friends and family, make posts and join rooms.</p>
+            <p class="aboutFunction">The page at the top that is blue is the page you're currently on, this can help you distinguish what one you have open.</p>
+            <img src="/images/fbTopButtons.jpg" class="descriptionImage" alt="Top buttons">
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Friend Requests</h3></button>
+          <div class="section">
+            <p class="aboutFunction">The friend request page is where you you can find four of the following aspects:</p>
+            <img src="/images/fbFriendRequests.jpg" class="descriptionImage" alt="Friend Requests">
+            <p class="aboutFunction"><b>Requests:</b> If you click this button, a page will be displayed with the people who wish to be friends with you. You have the option to choose whether you want to accept or decline their request, don't worry though if you choose to decline their requests they won't be notified.</p>
+            <p class="aboutFunction"><b>All Friends:</b> This button will bring you to a page of all the people you are friends with on Facebook. On this page you can choose to sort your friends either by default, newest or oldest. You can also search through your friends, if your trying to find someone.</p>
+            <p class="aboutFunction"><b>Search:</b> The search button functions the same way as the one on the home page, for further detail click the search button on the image below.</p>
+            <p class="aboutFunction"><b>People You May Know:</b> Below this header is people you may know that have a Facebook account, they typically appear when you have mutual friends. Clicking "Add Friends" will send a requests to them and clicking "Remove" will remove them for this page.</p>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Notifications</h3></button>
+          <div class="section">
+            <p class="aboutFunction">This page has a all notifications you recieve from Facebook. You can get notifications for friend requests, comments on your post and when other people tagging/mentioning you in their post. Notifications that have a light blue tint to their background means you have not seen it and clicking the notification will make this disapear.</p>
+            <img src="/images/fbNotifications.png" class="descriptionImage" alt="Notifications">
+            <p class="aboutFunction">If you click the three dots next to the notifications you will be brought up with these options, allowing you to delete the notifications, customise your notifications and report any issues you have.</p>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Settings</h3></button>
+          <div class="section">
+            <p class="aboutFunction">Settings help you control multiple things on your Facebook account whether it be your friends, groups your in, memories of past posts or Events. This page has alot of information that would be slightly confusing for a few words to explain. Clicking the following button will bring you to Facebooks help page that will provide you with further details.</p>
+            <div class="container">
+              <div class="centre">
+                <a href="https://www.facebook.com/help" target="_blank">
+                  <button class="buttons">More Help.</button>
+                </a>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Search</h3></button>
+          <div class="section">
+            <p class="aboutFunction">The search button is pretty simple to use, clicking it will display your keyboard. You are then able to search for people you want to friend, groups you want to join or pages to like/follow. Your recent searches and pages you have visted will be displayed under the search bar, to clear these click "See All" then "Clear All".</p>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Messenger</h3></button>
+          <div class="section">
+            <p class="aboutFunction">Messenger is facebooks messenging app, clicking the button will bring to the that app. The following button will bring you to a page that has instructions for that app.</p>
+            <div class="container">
+              <div class="centre">
+                <a href="..."> <!---->
+                  <button class="buttons">Click Here.</button>
+                </a>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Profile</h3></button>
+          <div class="section">
+            <p class="aboutFunction">Your profile is how other Facebook users perceive you. You are able to change your profile picture, cover image and details that are describe you.</p>
+              <img src="/images/fbProfileExample.png" class="descriptionImage" alt="Profile Example">
+                  
+              <div class="coverImage" id="coverImage">
+                <p class="aboutFunction"><b style="font-size: 22px;">Cover Image: </b>This is the image that is displayed above your profile picture. People are able to view it when they vist your page.</p>
+                <img src="/images/fbProfileCover.jpg" class="descriptionImage" alt="Cover Image">
+                <p class="aboutFunction"><b>View Profile Cover: </b>This will display your image in full screen, you are then able to see what people commented on it when you posted it and who liked it. To exit this photo, simply click your phones back arrow.</p>
+                <p class="aboutFunction"><b>Upload Photo: </b>When you click this button you are able to change the image to one in your phones gallery. You may want to take into consideration that when you change your image Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>Select Photo on Facebook: </b>This button also allows you to pick a cover image, however these photos are ones that you have uploaded to Facebook.</p>
+                <p class="aboutFunction"><b>Create Cover Collage: </b>This allows you to pick multiple photos that will then be placed into a collage for your cover image.</p>
+                <p class="aboutFunction"><b>Select Artwork: </b>These are a selection of cover images you can use that has been provided by Facebook.</p>
+              </div>
+              <br><hr><br>
+              <div class="profilePicture" id="profilePicture">
+                <p class="aboutFunction"><b style="font-size: 22px;">Profile Picture: </b>This picture is displayed in two places, the first being on your profile, and the second is when you make a post, like/comment on someones post.</p>
+                <img src="/images/fbProfilePicture.jpg" class="descriptionImage" alt="Profile Picture">
+                <p class="aboutFunction"><b>Add Frame: </b>This allows you to place a frame on your profile picture. When you click this button you will be brought to a page with frames used by your friends and a search bar for you to find new frames.</p>
+                <p class="aboutFunction"><b>Take New Profile Video: </b>Taking a new profile video will display your camera for you to take a video to use for you profile picyure. You may want to take into consideration that when you change your video Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>Select Profile Video: </b>Clicking this will allow you to add a video to your profile picture. You may want to take into consideration that when you change your video Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>Select Profile Picture: </b>Clicking this will allow you to change your profile picture. You may want to take into consideration that when you change your image Facebook will create a post that your friends can see.</p>
+                <p class="aboutFunction"><b>View Profile Picture: </b>This will display your image in full screen, you are then able to see what people commented on it when you posted it and who liked it. To exit this photo, simply click your phones back arrow.</p>
+                <p class="aboutFunction"><b>Make Avatar Profile Picture: </b>This allows you to dress up an animated character that looks like you to use as your profile picture.</p>
+              </div>
+              <br><hr><br>
+              <div class="aboutProfile" id="aboutProfile">
+                <p class="aboutFunction"><b style="font-size: 22px;">About You: </b>Your about you section of your profile has many features that you can choose to fill out or not. </p>
+                <img src="/images/fbProfileAbout.jpg" class="descriptionImage" alt="About You">
+                <p class="aboutFunction">You are able to display where you work/worked, schools you attended, places lived, contact information, gender, birthday, who your interested in, other names you use, relationships and family members. You can change these as many times as you would like, as well as changing who can view this information whether it be to the public, your friends, friends and their friends or only yourself</p>
+              </div>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Write Post</h3></button>
+          <div class="section">
+            <p class="aboutFunction">When you click the "What's on your mind?" box on your home page, you are brought to a new area that allows you to type or click on of the following options.</p>
+            <p class="gap">...</p>
+            <p class="aboutFunction"><b style="color: #45BD63">&#9711;  </b>Photo/Video: Attach a photo or video to your post.</p>
+            <p class="aboutFunction"><b style="color: #1878F3">&#9711;  </b>Tag People: Mentioning other people on your post will notify them and be displayed on their profile meaning their friends can like uyour post.</p>
+            <p class="aboutFunction"><b style="color: #F0C257">&#9711;  </b>Feeling/Activity: Share with your friends how you are feeling or what your doing at the moment.</p>
+            <p class="aboutFunction"><b style="color: #F5533E">&#9711;  </b>Check In: Add a location to your post, to share where you have been with your friends.</p>
+            <p class="aboutFunction"><b style="color: #E4304E">&#9711;  </b>Live Video: Create a live broadcast for people to watch in real time.</p>
+            <p class="aboutFunction"><b style="color: #49CFBB">&#9711;  </b>Background Colour: Change the background of your post, this can include the ones with a solid colour or ones with different shapes.</p>
+            <p class="aboutFunction"><b style="color: #4699FF">&#9711;  </b>Camera: Open the camera to take a picture or video to post.</p>
+            <p class="aboutFunction"><b style="color: #34B5A3">&#9711;  </b>GIF: Select a moving image to post.</p>
+            <p class="aboutFunction"><b style="color: #F3425F">&#9711;  </b>Ask for Recommendations: Ask your friends for recommendations for different activities/restaurants/etc in different cities/towns/regions.</p>
+            <p class="aboutFunction"><b style="color: #FF66BF">&#9711;  </b>Raise Money: Raise money for your friends, someone else or organisation you would like.</p>
+            <p class="aboutFunction"><b style="color: #EB2B4B">&#9711;  </b>Host a Q&A: Get your friends to ask questions about a topic and you can answer the ones choose to.</p>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Create Room</h3></button>
+          <div class="section">
+            <p class="aboutFunction">Create a video chat for your Facebook friends to join or a selected list of people. When you create a room it will be displayed at the top of your homepage, which others can join in it. For more informations please click the following button.</p>
+            <div class="container">
+              <div class="centre">
+                <a href="https://www.facebook.com/help/2624675161136855/" target="_blank">
+                  <button class="buttons">More Help.</button>
+                </a>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Post Story</h3></button>
+          <div class="section">
+            <p class="aboutFunction">Stories are a way to post photos, short video, voting polls and more for a limited amount of time. Stories are avaliable for your friends to see for 24 hours, after this time it will disapear. The following features are what type of stories you can post.</p>
+            <p class="aboutFunction"><b>Text: </b>This is just plain text on a coloured background of your choice. You are also able to change the font of your text.</p>
+            <p class="aboutFunction"><b>Music: </b>Select a song to play while your friends view your story, you can also add text, stickers and colours.</p>
+            <p class="aboutFunction"><b>Green Screen: </b>This alloes you to place different backgrounds behind you. After taking the photo or video you can decorate it with other features.</p>
+            <p class="aboutFunction"><b>Boomerang: </b>This is very short video that is played in a constant loop.</p>
+            <p class="aboutFunction"><b>Selfie: </b>Take a photo of yourself or someone your with, that has a filter on top. A filter is like an accessory that your camera places on you in your phone.</p>
+            <p class="aboutFunction"><b>Poll: </b>This allows you to post a voting poll where you can ask questions, preferences or something that can be answered with two options.</p>
+            <p class="aboutFunction"><b>Mood: </b>This is posting GIFs that have been categorised into different types of moods.</p>
+            <img>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>View Friends Story</h3></button>
+          <div class="section">
+            <p class="aboutFunction">When your friends have posted a story it will be displayed at the top of your homepage. You are able to see their post without clicking it, however, for a more clearer view or if your friend has posted more than one story you will have to click it. When on it you can reply or react to it, and if you would like to exit it there is a cross button in the top right that closes the story.</p>
+            <br>
+          </div>
+
+          <button class="accordion"><h3>Friends Post</h3></button>
+          <div class="section">
+            <p class="aboutFunction">When your friends post something new on Facebook it will be displayed on your home page. These posts can include; photos, videos, links or simply just text. Your friends profile picture, name and when they made the post will be displayed on the top right of their post. They are also able to tag other people, or a location they were at, this will be displayed next to their name.</p>
+            <p class="aboutFunction">Sometimes you may see posts from people you aren't friends with, this is becasue a friend of yours has either been tagged or commented on their post.</p>
+            <img src="/images/fbFriendsPost.png" class="descriptionImage" alt="Friends Post">
+            <p class="aboutFunction">There are a couple of ways for you to interact with your friends post including:</p>
+            <p class="aboutFunction"><b>- </b>The thumbs up button allows you to like your their post, if you hold down this button other options will be displayed for you. You are also able to love, laugh, cry, etc about their post, these are displayed as different emojis.</p>
+            <p class="aboutFunction"><b>- </b>Clicking the comment button allows you to comment on someones post, this can be with text, GIF or a sticker which are all located above your keyboard.</p>
+            <p class="aboutFunction"><b>- </b>Sharing your post to others will send this via messenger, you are able to send this to any friend you like.</p>
+            <br>
+          </div>
+
+        </div>
+      </div>
+  
     </div>
 
     <!--Importing jquery-->
@@ -70,10 +487,33 @@
     <!--Imported code for image-map-->
     <script src="../imageMap/jquery.rwdImageMaps.min.js"></script>
     <script>
-      //Making image map responsive(not in javascipt file becasue it wasn't reading the code when it was in there)
+      //Making image map responsive
       $(document).ready(function(e) {
         $('img[usemap]').rwdImageMaps();
       });
+
+      //Shows the area in image map when clicked
+      $('.fbImageMap').click(function(e) {
+        e.preventDefault();
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      })
+
+      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
+      var accordion = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener("click", function() {
+          this.classList.toggle("open");
+          var section = this.nextElementSibling;
+          if (section.style.maxHeight) {
+            section.style.maxHeight = null;
+          } else {
+            section.style.maxHeight = section.scrollHeight + "px";
+          } 
+        });
+      }
+
     </script>
   </body>
 </html>

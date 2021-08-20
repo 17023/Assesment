@@ -1,3 +1,6 @@
+/*Padding: Top Right Bottom Left Padding: Top Right&Left Bottom Padding: Top&Bottom Right&Left*/
+/*font-family: 'Lucida Sans', sans-serif;*/
+
 /*When the screen is at most 500px wide*/
 @media only screen and (max-width: 500px) {
   .aroundApp {
@@ -24,22 +27,15 @@
     padding-bottom: 0.4375rem;
     width: 33%;
   }
-  .imageMapImage {
-    width: 100%;
-  }
+  .imageMapImage {width: 100%;}
+  .tableBox {width: 100%;}
   .box {
     width: 100%;
     margin-bottom: 2rem;
   }
-  .phoneText {
-    display: block;
-  }
-  .comText {
-    display: none;
-  }
-  .appDescription {
-    padding: 0.4rem 2rem;
-  }
+  .smallScreenText {display: block;}
+  .largeScreenText {display: none;}
+  .appDescription {padding: 0.4rem 2rem;}
 }
 
 /*When the screen is at least 900px wide*/
@@ -53,7 +49,5 @@
 @media screen and (min-width: 1200px) {
   * {font-size: 20px;}
   .padding {padding: 2rem 7rem 1rem 7rem;}
-  .description {
-    text-align: center;
-    }
+  .description {text-align: center;}
 }

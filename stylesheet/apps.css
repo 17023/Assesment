@@ -3,29 +3,29 @@
 
 /*App name*/
 .appHeader {
+  font-family: 'Lucida Sans', sans-serif;
+  font-size: 38px;
   padding-top: 4rem;
   text-align: center;
-  font-size: 38px;
-  font-family: 'Lucida Sans', sans-serif;
 }
 
 /*App description*/
 .appDescription {
+  padding: 0.4rem 14vw;
   text-align: center;
-  padding: 0.4rem 14rem;
 }
 
 /*Padding around image map*/
-.imageMap {
+.imageMap, .imageMapFailed {
   padding: 1rem;
 }
 
 /*Image of the image map*/
 .imageMapImage {
-  width: 45vw;
-  max-width: 100%;
   border: 1px solid #1A1739;
   border-radius: 0.2rem;
+  max-width: 100%;
+  width: 45vw;
 }
 
 /*Co-ordinates in the map*/
@@ -36,9 +36,8 @@
 /*Information box*/
 .box {
   border: 1px solid #1A1739;
-  float: right;
-  width: 45vw;
   border-radius: 0.2rem;
+  width: 45vw;
 }
 
 /*Information box - padding*/
@@ -47,24 +46,94 @@
 }
 
 /*Information box - header*/
-.insideBox h3 {
+.insideBox h3  {
   font-family: 'Lucida Sans', sans-serif;
-  text-align: center;
-  padding-bottom: 0.5rem;
   font-size: 22px;
+  padding-bottom: 0.5rem;
+  text-align: center;
 }
 
-.phoneText {
+/*Text displayed on screens < 700*/
+.smallScreenText {
   display: none;
 }
 
-/*Information box - text*/
-.insideBox p {
-  padding-top: 0.4rem;
-  padding-left: 0.6rem;
+/*Text in information box*/
+.smallScreenText, .largeScreenText, .padding2, .aboutFunction {
+  padding: 0.6rem 0 0.4rem 0;
+}
+
+/*Images in the sections of the image map*/
+.descriptionImage {
+  margin: 0.7rem 10% 0.9rem 10%;
+  width: 80%;
+}
+
+/*Divs that aren't displayed when the page first loads*/
+.areaDescription, .imageMapFailed, #profileOne, #profileTwo, #profileThree {
+  display: none;
+}
+
+/*Gap between boxes*/
+.gap {
+  color: rgba(24, 25, 26, 0);
+  font-size: 0.1px;
+  user-select: none;
+}
+
+/*Buttons on the fbProfile section*/
+.directionButtons {
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid rgb(24, 25, 26);
+  border-radius: 50%;
+  font-size: 22px;
+  margin: 0 0.3rem;
+  padding: 8px 16px;
+}
+
+/*When the mouse hovers the button*/
+.directionButtons:hover {
+  background-color: rgb(173, 186, 189);
+  transform: scale(1.2);
+}
+
+/*Drop down headers if the image map doesn't work*/
+.accordion { /**/
+  background-color: rgb(255, 255, 255);
+  border: none;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
   font-size: 15px;
+  letter-spacing: 0.6px;
+  margin: 0.25rem 0;
+  outline: none;
+  padding: 1rem;
+  text-align: left;
+  text-decoration: none;
+  transition: 0.5s;
+  width: 100%;
 }
 
-.areaDescription {
-  display: none;
+/*active/hovered accordions*/
+.open, .accordion:hover { /**/
+  background-color: rgb(240, 240, 240);
+}
+
+/*The part of the accordion that contains the information*/
+.section {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 18px;
+  transition: max-height 0.25s ease-out;
+}
+
+/*Footer*/
+footer {
+  background-color: rgba(24, 25, 26, 0.3); /*0.3 = opacity*/
+  bottom: 0;
+  color: rgb(254, 254, 254);
+  user-select: none;
+  width: 100%;
 }
