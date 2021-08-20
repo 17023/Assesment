@@ -40,8 +40,8 @@
 
 /*When the screen is at least 900px wide*/
 @media screen and (min-width: 900px) {
-  .image2 {display: block;}
-  .image {display: none;}
+  .headerImage2 {display: block;}
+  .headerImage {display: none;}
   .padding {padding: 2.5rem 5rem 1rem 5rem;}
 }
 

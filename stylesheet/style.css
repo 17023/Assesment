@@ -53,13 +53,13 @@
 }
 
 /*Header image - smaller screens*/
-.image {
+.headerImage {
   -webkit-filter: blur(0.0625rem);
   filter: blur(0.0625rem); /*blurs the image*/
 }
 
 /*Header image - larger screens*/
-.image2{
+.headerImage2{
   display: none; /*the div is not shown*/
   -webkit-filter: blur(0.0635rem);
   filter: blur(0.0635rem);
