@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phone Help</title> <!--Text displayed on the broweser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/phone.png"> <!--Icon displayed on the browser tab-->
+    <link href="/stylesheet/style.css" rel="stylesheet" type="text/css"/> <!--Original stylesheet used one all pages-->
+    <link href="/stylesheet/apps.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for the apps used-->
+    <link href="/stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="../script.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <!--Navigation-->
+    <nav>
+      <div class="navText">PHONE HELP</div> <!--Header in the nav bar-->
+      <a href="../helpPage.html">HELP</a> <!--Link to home page-->
+      <a href="../index.html">HOME</a> <!--Link to help page-->
+    </nav>
+
+    <!--Description of the app-->
+    <h1 class="appHeader" style="color: #E84A2E">Gmail</h1>
+    <p class="appDescription">This app is a way of sending free and recieve digital letters from people all over the world. Gmail is an app you can download from the App Store on apple products or the Play Store on androids.</p>
+
+    <!--Help button-->
+    <a class="helpButton" href="../helpPage.html">?</a>
+
+    <!--Image Map & Descriptions on different functions-->
+    <div class="imageMap" id="imageMap">
+
+      <!--Information box - Changes the info depending on what part of the image is clicked-->
+      <div class="box" style="float: right;">
+        <div class="insideBox">
+
+          <div id="beginningText"> <!--fix-->
+            <h3>How to use this page:</h3> <!--Explanation on how to use the page-->
+            <hr>
+            <!--Two different explainations for if the user is user a laptop/computer or touch screen device-->
+            <p class="largeScreenText">Hover your mouse over different parts of the image to the left this will display a couple of words explaining what this function does. If you click that part of the image, a description of that function will show in place of this box. If necessary, the explanations will also contain an image as an example.<p>
+            <p class="smallScreenText">Different parts of the following image are clickable. You can click the functions you are uncertain about, which will bring up a description of that function, hopefully helping you solve your questions. If necessary, the explanations will also contain an image as an example.</p>
+            <hr>
+            <!--Button if image map failed-->
+            <p class="padding2">If the image isn't working, click the following button to bring up a less interactive/detailed version:</p>
+            <p class="gap">...</p>
+            <div class="container">
+              <div class="centre">
+                <button class="buttons" onclick="imageMapFailed()">Click Here</button> <!--fix-->
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <!--Different section explanations that are displayed when the user clicks the corresponding coordinates on the image map. Some sections contain images for extra details or links to the Google help page if necessary.-->
+
+          <div class="areaDescription" id="gmSideBar">
+            <h3>Side Bar. (Three Lines)</h3>
+            <hr>
+            <p class="aboutFunction">When you click the side bar a tab will appear from the left with the following options for you to click. To get back to your inbox from either this tab or if you have clicked one of the options, just click the button that says "Inbox" in this tab.</p>
+            <p class="aboutFunction"><b>Starred:  </b>This is where all of the emails that you have starred will appear(they will still be in your inbox though). Starred emails can help you distinguish between important and unimportant emails.</p>
+            <img src="/images/gmStarred.png" class="descriptionImage" alt="Starred vs Not Starred">
+            <p class="aboutFunction"><b>Snoozed:  </b>This allows you to to see emails you have temporarily removed.</p>
+            <p class="aboutFunction"><b>Inportant:  </b>This folder places emails Google thinks maybe important to you. They do this by placing emails from frequent contacts or from keywords in the email.</p>
+            <p class="aboutFunction"><b>Sent:  </b>Is the all the emails that you have sent. This can be helpful for you to determine if an email actually sends, if it doesn't it may appear in your drafts or outbox folder.</p>
+            <p class="aboutFunction"><b>Scheduled:  </b>When composing an email you are able to set to be delivered at a certain time, so this is the folder they will reamin in untill the specified time.</p>
+            <p class="aboutFunction"><b>Outbox:  </b>This displays all your emails that in the process of sending. This means that the recipient will not have recieved it untill it leaves this folder and appears in the sent folder.</p>
+            <p class="aboutFunction"><b>Drafts:  </b>If you are writing an email and decide to finish it at a later time it is automatically saved in your Drafts folder. These emails won't be deleted after a certain amount of time, so you can leave them in there as long as you like.</p>
+            <p class="aboutFunction"><b>All Mail:  </b>This is pretty similar to your inbox, however, it also contains sent, archieved, promotial and social emails. Most use this folder as a way to view their archieved emails.</p>
+            <p class="aboutFunction"><b>Spam:  </b>Google automatically sorts between actual emails and ones they assume is junk. Spam emails will be automatically deleted after 30 days, however, there is a "Empty Spam now" if you wish to do it sooner.</p>
+            <p class="aboutFunction"><b>Bin/Trash:  </b>All emails you have deleted will appear here. If you wish to resore the email, after clicking the email there should be three vertical dots in the right hand corner, in this a "Move to" button, after selecting this you will be able to move it to your inbox.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="gmSearchMail">
+            <h3>Search Mail.</h3>
+            <hr>
+            <p class="aboutFunction">If you wish to find an email in your inbox but are unable to, using this Search bar will help.</p>
+            <img src="/images/gmSearch.jpg" class="descriptionImage" alt="Search Mail">
+            <p class="aboutFunction">You are able to search using the name/email of the sender or key words you remember from the email. You should refrain from using long scentences, as it will make it harder for you to find the email.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="gmAccount">
+            <h3>Account.</h3>
+            <hr>
+            <p class="aboutFunction">This is your account, whatever you have chosen as your profile picture will be displayed here. Clicking this will bring up:</p>
+            <p class="aboutFunction"><b style="color: #E84A2E">&#9711;  </b>Any other accounts you are signed into for you to access. Changing accounts will not sign you out of the account your on now, so you are able to return to this one afterwards.</p>
+            <p class="aboutFunction"><b style="color: #E84A2E">&#9711;  </b>Adding other accounts. If you click this you then go through the processes of logging into another one of you accounts, which afterwards shoulds appear below your current account.</p>
+            <p class="aboutFunction"><b style="color: #E84A2E">&#9711;  </b>Managing your accounts on your device will bring you to your settings, where your able to remove any unwanted accounts from your device.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="gmEmail">
+            <h3>Email.</h3>
+            <hr>
+            <p class="aboutFunction">This is an email that you have recieved from another person. If  you haven't read the email before the text will appear bold, displayed in the image below.</p>
+            <img src="/images/gmUnread.png" class="descriptionImage" alt="Unread vs Read">
+            <p class="about Function">There are many more function and buttons when you open an email to read, for a further explaination click the following button.</p>
+            <div class="container">
+              <div class="centre">
+                <a href="/apps/gmail2.html" class="buttons">Click Here</a>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="gmCompose">
+            <h3>Compose.</h3>
+            <hr>
+            <p class="aboutFunction">This is the button you click if you want to write an email, the following image is what will appear after you click compose(minus the red text).</p>
+            <img src="/images/gmCompose.png" class="descriptionImage" alt="Compose Email">
+            <p class="aboutFunction">When filling in the Recipient information, you have to know the persons entire email address just entering their name won't work(unless you have frequently contacted them or their in you google contacts). The subject should be the main reason for the email and shouldn't be to long(typiclly 25-30 characters). Where it says "Compose email" is where you write the message itself.</p>
+            <p class="aboutFunction"><i style="font-size:20px" class="fa">&#xf0c6;</i> The paperclip in the top right allows you to attach a document, picture or video from your device/google drive. If you add large files this will the time it takes the email to send slower.</p>
+            <p class="aboutFunction">The arrow is the send button, only click this if your email is complete as you can't take it back after it's sent.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="gmMail">
+            <h3>Mail.</h3>
+            <hr>
+            <p class="aboutFunction">Your app will always open on the mail tab as the default. The main use for this button is to bring you can to this page when you click the "Meet" button next to it.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="gmMeet">
+            <h3>Meet.</h3>
+            <hr>
+            <p class="aboutFunction">Google Meet is a type video chat with multiple other people. If you would like to host a meeting, you will be given a code to send to other people that would like to join your meeting. The code acts as a key of some sorts, it's what they enter so they can join your specific meeting. If you are given the code and would like to join someone elses meeting click the "Join with a code" button, which you then enter the code you recieved.</p>
+            <br>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="imageMapClass" id="imageMapFirst">
+        <!--Image in the image map. The "usemap" links the image to the map.-->
+        <img src="/images/gmailInbox.jpg" usemap="#image-map" class="imageMapImage" alt="Gmail Inbox">
+
+        <!--Image map made on "https://www.image-map.net/"-->
+        <!--Each area is a different button on the home page, which is why the coords differ. The "data-target" links the area to its description and the "onclick" gets rid of the text that is dispalyed in the beginning when an area is clicked.-->
+        <map name="image-map">
+          <area alt="Side bar" title="Side bar" href="javascript:void(0)" coords="32,21,96,88" shape="rect" class="imageMapCoords" data-target="gmSideBar" onclick="beginningText()" />
+          <area alt="Search mail" title="Search mail" href="javascript:void(0)" coords="102,20,552,90" shape="rect" class="imageMapCoords" data-target="gmSearchMail" onclick="beginningText()" />
+          <area alt="Account" title="Account" href="javascript:void(0)" coords="588,22,667,90" shape="rect" class="imageMapCoords" data-target="gmAccount" onclick="beginningText()" />
+          <area alt="Email" title="Email" href="javascript:void(0)" coords="9,166,694,358" shape="rect" class="imageMapCoords" data-target="gmEmail" onclick="beginningText()" />
+          <area alt="Compose" title="Compose" href="javascript:void(0)" coords="401,692,674,786" shape="rect" class="imageMapCoords" data-target="gmCompose" onclick="beginningText()" />
+          <area alt="Mail" title="Mail" href="javascript:void(0)" coords="112,800,281,900" shape="rect" class="imageMapCoords" data-target="gmMail" onclick="beginningText()" />
+          <area alt="Meet" title="Meet" href="javascript:void(0)" coords="408,806,587,900" shape="rect" class="imageMapCoords" data-target="gmMeet" onclick="beginningText()" />
+        </map>
+      </div>
+
+    </div>
+  
+    <!--Image map failed-->  
+    <div class="imageMapFailed" id="failedInfo">
+
+      <div class="box" style="float: right;">
+        <div class="insideBox">
+          <h3>Image failed:</h3>
+          <hr>
+          <!--Explaning the that you will still recieve the same amount of imformation just less interactive when the image map failed.-->
+          <p class="padding2">The image was supposed to give you a detailed explanation of different parts of Gmail when you clicked certain features on the image. This page gives you the same amount of information, but instead of you clicking the image, the different sections are shown, which will display more information when you click the title. When you click the section again it will close, don't worry you can open and close the sections as many times as you want.</p>
+          <hr>
+          <!--Image of the home page, casue they are no longer clicking the image-->
+          <p class="padding2"><b>Home Page:</b></p>
+          <img src="/images/gmailInbox.jpg" class="descriptionImage" alt="Home Page">
+          <hr>
+          <!--Allowing the user to go back to the previous page if they want.-->
+          <p class="padding2">Accidentally clicked the button or want to try the image again, click this button to bring you back to the previous page:</p>
+          <p class="gap">...</p>
+          <div class="container">
+            <div class="centre">
+              <button class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again--> <!--fix-->
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <p class="gap">...</p>
+
+      <div class="box">
+        <div class="insideBox">
+
+          <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
+          <button class="accordion">Side Bars. (Three Lines)</button>
+          <div class="section">
+            <p class="aboutFunction">When you click the side bar a tab will appear from the left with the following options for you to click. To get back to your inbox from either this tab or if you have clicked one of the options, just click the button that says "Inbox" in this tab.</p>
+            <p class="aboutFunction"><b>Starred:  </b>This is where all of the emails that you have starred will appear(they will still be in your inbox though). Starred emails can help you distinguish between important and unimportant emails.</p>
+            <img src="/images/gmStarred.png" class="descriptionImage" alt="Starred vs Not Starred">
+            <p class="aboutFunction"><b>Snoozed:  </b>This allows you to to see emails you have temporarily removed.</p>
+            <p class="aboutFunction"><b>Inportant:  </b>This folder places emails Google thinks maybe important to you. They do this by placing emails from frequent contacts or from keywords in the email.</p>
+            <p class="aboutFunction"><b>Sent:  </b>Is the all the emails that you have sent. This can be helpful for you to determine if an email actually sends, if it doesn't it may appear in your drafts or outbox folder.</p>
+            <p class="aboutFunction"><b>Scheduled:  </b>When composing an email you are able to set to be delivered at a certain time, so this is the folder they will reamin in untill the specified time.</p>
+            <p class="aboutFunction"><b>Outbox:  </b>This displays all your emails that in the process of sending. This means that the recipient will not have recieved it untill it leaves this folder and appears in the sent folder.</p>
+            <p class="aboutFunction"><b>Drafts:  </b>If you are writing an email and decide to finish it at a later time it is automatically saved in your Drafts folder. These emails won't be deleted after a certain amount of time, so you can leave them in there as long as you like.</p>
+            <p class="aboutFunction"><b>All Mail:  </b>This is pretty similar to your inbox, however, it also contains sent, archieved, promotial and social emails. Most use this folder as a way to view their archieved emails.</p>
+            <p class="aboutFunction"><b>Spam:  </b>Google automatically sorts between actual emails and ones they assume is junk. Spam emails will be automatically deleted after 30 days, however, there is a "Empty Spam now" if you wish to do it sooner.</p>
+            <p class="aboutFunction"><b>Bin/Trash:  </b>All emails you have deleted will appear here. If you wish to resore the email, after clicking the email there should be three vertical dots in the right hand corner, in this a "Move to" button, after selecting this you will be able to move it to your inbox.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Search Mail</button>
+          <div class="section">
+            <p class="aboutFunction">If you wish to find an email in your inbox but are unable to, using this Search bar will help.</p>
+            <img src="/images/gmSearch.jpg" class="descriptionImage" alt="Search Mail">
+            <p class="aboutFunction">You are able to search using the name/email of the sender or key words you remember from the email. You should refrain from using long scentences, as it will make it harder for you to find the email.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Account</button>
+          <div class="section">
+            <p class="aboutFunction">This is your account, whatever you have chosen as your profile picture will be displayed here. Clicking this will bring up:</p>
+            <p class="aboutFunction"><b style="color: #E84A2E">&#9711;  </b>Any other accounts you are signed into for you to access. Changing accounts will not sign you out of the account your on now, so you are able to return to this one afterwards.</p>
+            <p class="aboutFunction"><b style="color: #E84A2E">&#9711;  </b>Adding other accounts. If you click this you then go through the processes of logging into another one of you accounts, which afterwards shoulds appear below your current account.</p>
+            <p class="aboutFunction"><b style="color: #E84A2E">&#9711;  </b>Managing your accounts on your device will bring you to your settings, where your able to remove any unwanted accounts from your device.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Email</button>
+          <div class="section">
+            <p class="aboutFunction">This is an email that you have recieved from another person. If  you haven't read the email before the text will appear bold, displayed in the image below.</p>
+            <img src="/images/gmUnread.png" class="descriptionImage" alt="Unread vs Read">
+            <p class="about Function">There are many more function and buttons when you open an email to read, for a further explaination click the following button.</p>
+            <div class="container">
+              <div class="centre">
+                <a href="/apps/gmail2.html" class="buttons">Click Here</a>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <button class="accordion">Compose</button>
+          <div class="section">
+            <p class="aboutFunction">This is the button you click if you want to write an email, the following image is what will appear after you click compose(minus the red text).</p>
+            <img src="/images/gmCompose.png" class="descriptionImage" alt="Compose Email">
+            <p class="aboutFunction">When filling in the Recipient information, you have to know the persons entire email address just entering their name won't work(unless you have frequently contacted them or their in you google contacts). The subject should be the main reason for the email and shouldn't be to long(typiclly 25-30 characters). Where it says "Compose email" is where you write the message itself.</p>
+            <p class="aboutFunction"><i style="font-size:20px" class="fa">&#xf0c6;</i> The paperclip in the top right allows you to attach a document, picture or video from your device/google drive. If you add large files this will the time it takes the email to send slower.</p>
+            <p class="aboutFunction">The arrow is the send button, only click this if your email is complete as you can't take it back after it's sent.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Mail</button>
+          <div class="section">
+            <p class="aboutFunction">Your app will always open on the mail tab as the default. The main use for this button is to bring you can to this page when you click the "Meet" button next to it.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Meet</button>
+          <div class="section">
+            <p class="aboutFunction">Google Meet is a type video chat with multiple other people. If you would like to host a meeting, you will be given a code to send to other people that would like to join your meeting. The code acts as a key of some sorts, it's what they enter so they can join your specific meeting. If you are given the code and would like to join someone elses meeting click the "Join with a code" button, which you then enter the code you recieved.</p>
+            <br>
+          </div>
+
+        </div>
+      </div>
+  
+    </div>
+
+    <!--Importing jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!--Imported code for image-map-->
+    <script src="../imageMap/jquery.rwdImageMaps.min.js"></script>
+    <script>
+      //Making image map responsive
+      $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps();
+      });
+
+      //Shows the area in image map when clicked
+      $('.imageMapCoords').click(function(e) {
+        e.preventDefault();
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      })
+
+      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
+      var accordion = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener("click", function() {
+          this.classList.toggle("open");
+          var section = this.nextElementSibling;
+          if (section.style.maxHeight) {
+            section.style.maxHeight = null;
+          } else {
+            section.style.maxHeight = section.scrollHeight + "px";
+          } 
+        });
+      }
+
+    </script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-//Popup at the beginning odf the website
+//Popup at the beginning of the website
 setTimeout(function(){
   document.getElementById('popup').style.display = "block";
 }, 2700);
@@ -16,55 +16,18 @@ function buttonPopup() {
 }
 
 //Hides beginning text when area(s) on image map clicked
-function fbBeginningText() {
-  document.getElementById("fbBeginningText").style.display = "none";
+function beginningText() {
+  document.getElementById("beginningText").style.display = "none";
 }
 
 //Displays accordion id image map failed
-function fbimageMapFailed() {
-  document.getElementById("fbTable").style.display = "block";
+function imageMapFailed() {
+  document.getElementById("failedInfo").style.display = "block";
   document.getElementById("imageMap").style.display = "none";
 }
 
 //Reloads the image map if user wants to go back
-function fbGoBack() {
+function goBack() {
   document.getElementById("imageMap").style.display = "block";
-  document.getElementById("fbTable").style.display = "none";
+  document.getElementById("failedInfo").style.display = "none";
 }
-
-
-//Goes to the next section in the fbProfile part
-  function next1() {
-    document.getElementById("profileOne").style.display = "block";
-    document.getElementById("profileBeginning").style.display = "none";
-  }
-  function next2() {
-    document.getElementById("profileTwo").style.display = "block";
-    document.getElementById("profileOne").style.display = "none";
-  }
-  function next3() {
-    document.getElementById("profileThree").style.display = "block";
-    document.getElementById("profileTwo").style.display = "none";
-  }
-  function next4() {
-    document.getElementById("profileBeginning").style.display = "block";
-    document.getElementById("profileThree").style.display = "none";
-  }
-
-//Goes to the previous section in the fbProfile part
-  function previous1() {
-    document.getElementById("profileThree").style.display = "block";
-    document.getElementById("profileBeginning").style.display = "none";
-  }
-  function previous2() {
-    document.getElementById("profileBeginning").style.display = "block";
-    document.getElementById("profileOne").style.display = "none";
-  }
-  function previous3() {
-    document.getElementById("profileOne").style.display = "block";
-    document.getElementById("profileTwo").style.display = "none";
-  }
-  function previous4() {
-    document.getElementById("profileTwo").style.display = "block";
-    document.getElementById("profileThree").style.display = "none";
-  }

@@ -37,6 +37,7 @@
   font-family: 'Lucida Sans', sans-serif;
   padding: 0.625rem;
   text-align: center;
+  text-decoration: none;
   transition: all 0.2s ease-out; /*transition will effect all .buttons properities, will take 0.2s and have a slow end*/
   -ms-user-select: none;
   -webkit-transition: all 0.2s ease-out;
