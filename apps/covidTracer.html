@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phone Help</title> <!--Text displayed on the broweser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/phone.png"> <!--Icon displayed on the browser tab-->
+    <link href="/stylesheet/style.css" rel="stylesheet" type="text/css"/> <!--Original stylesheet used one all pages-->
+    <link href="/stylesheet/apps.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for the apps used-->
+    <link href="/stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
+    <script src="../script.js" type="text/javascript"></script>
+  </head>
+
+  <body>
+
+    <!--Navigation-->
+    <nav>
+      <div class="navText">PHONE HELP</div> <!--Header in the nav bar-->
+      <a href="../helpPage.html">HELP</a> <!--Link to home page-->
+      <a href="../index.html">HOME</a> <!--Link to help page-->
+    </nav>
+
+    <!--Description of the app-->
+    <h1 class="appHeader" style="color: #E84A2E">...</h1>
+    <p class="appDescription">...</p>
+
+    <!--Help button-->
+    <a class="helpButton" href="../helpPage.html">?</a>
+
+    <!--Image Map & Descriptions on different functions-->
+    <div class="imageMap" id="imageMap">
+
+      <!--Information box - Changes the info depending on what part of the image is clicked-->
+      <div class="box" style="float: right;">
+        <div class="insideBox">
+
+          <div id="beginningText"> <!--fix-->
+            <h3>How to use this page:</h3> <!--Explanation on how to use the page-->
+            <hr>
+            <!--Two different explainations for if the user is user a laptop/computer or touch screen device-->
+            <p class="largeScreenText">Hover your mouse over different parts of the image to the left this will display a couple of words explaining what this function does. If you click that part of the image, a description of that function will show in place of this box. If necessary, the explanations will also contain an image as an example.<p>
+            <p class="smallScreenText">Different parts of the following image are clickable. You can click the functions you are uncertain about, which will bring up a description of that function, hopefully helping you solve your questions. If necessary, the explanations will also contain an image as an example.</p>
+            <hr>
+            <!--Button if image map failed-->
+            <p class="padding2">If the image isn't working, click the following button to bring up a less interactive/detailed version:</p>
+            <p class="gap">...</p>
+            <div class="container">
+              <div class="centre">
+                <button class="buttons" onclick="imageMapFailed()">Click Here</button>
+              </div>
+            </div>
+            <br>
+          </div>
+
+          <!--Different section explanations that are displayed when the user clicks the corresponding coordinates on the image map. Some sections contain images for extra details or links to the Google help page if necessary.-->
+
+          <div class="areaDescription" id="...">
+            <h3></h3>
+            <hr>
+            <p class="aboutFunction"></p>
+            <img src="..." class="descriptionImage" alt="...">
+            <br>
+          </div>
+
+        </div>
+      </div>
+
+      <!--Image in the image map. The "usemap" links the image to the map.-->
+      <img src="..." usemap="#image-map" class="imageMapImage" alt="...">
+
+      <!--Image map made on "https://www.image-map.net/"-->
+      <!--Each area is a different button on the home page, which is why the coords differ. The "data-target" links the area to its description and the "onclick" gets rid of the text that is dispalyed in the beginning when an area is clicked.-->
+        
+
+
+    </div>
+  
+    <!--Image map failed-->  
+    <div class="imageMapFailed" id="failedInfo">
+
+      <div class="box" style="float: right;">
+        <div class="insideBox">
+          <h3>Image failed:</h3>
+          <hr>
+          <!--Explaning the that you will still recieve the same amount of imformation just less interactive when the image map failed.-->
+          <p class="padding2">The image was supposed to give you a detailed explanation of different parts of ... when you clicked certain features on the image. This page gives you the same amount of information, but instead of you clicking the image, the different sections are shown, which will display more information when you click the title. When you click the section again it will close, don't worry you can open and close the sections as many times as you want.</p>
+          <hr>
+          <!--Image of the home page, casue they are no longer clicking the image-->
+          <p class="padding2"><b>Home Page:</b></p>
+          <img src="..." class="descriptionImage" alt="...">
+          <hr>
+          <!--Allowing the user to go back to the previous page if they want.-->
+          <p class="padding2">Accidentally clicked the button or want to try the image again, click this button to bring you back to the previous page:</p>
+          <p class="gap">...</p>
+          <div class="container">
+            <div class="centre">
+              <button class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
+            </div>
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <p class="gap">...</p>
+
+      <div class="box">
+        <div class="insideBox">
+
+          <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
+          <button class="accordion"></button>
+          <div class="section">
+            
+            <br>
+          </div>
+
+        </div>
+      </div>
+  
+    </div>
+
+    <!--Importing jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+
+    <!--Imported code for image-map-->
+    <script src="../imageMap/jquery.rwdImageMaps.min.js"></script>
+    <script>
+      //Making image map responsive
+      $(document).ready(function(e) {
+        $('img[usemap]').rwdImageMaps();
+      });
+
+      //Shows the area in image map when clicked
+      $('.imageMapCoords').click(function(e) {
+        e.preventDefault();
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      })
+
+      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
+      var accordion = document.getElementsByClassName("accordion");
+      var i;
+
+      for (i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener("click", function() {
+          this.classList.toggle("open");
+          var section = this.nextElementSibling;
+          if (section.style.maxHeight) {
+            section.style.maxHeight = null;
+          } else {
+            section.style.maxHeight = section.scrollHeight + "px";
+          } 
+        });
+      }
+
+    </script>
+  </body>
+</html>
