@@ -22,8 +22,8 @@
     </nav>
 
     <!--Description of the app-->
-    <h1 class="appHeader" style="color: #E84A2E">...</h1>
-    <p class="appDescription">...</p>
+    <h1 class="appHeader" style="color: #FFC300">Covid Tracer</h1>
+    <p class="appDescription">This app can be downloaded on the App Store and the Google Play Store. It is a way of tracking your whereabouts so that it if you get infected by Covid-19 the government can trace any close contacts. They also use this app to let you know if you have come in contact with anyone that has Covid-19.</p>
 
     <!--Help button-->
     <a class="helpButton" href="../helpPage.html">?</a>
@@ -55,11 +55,66 @@
 
           <!--Different section explanations that are displayed when the user clicks the corresponding coordinates on the image map. Some sections contain images for extra details or links to the Google help page if necessary.-->
 
-          <div class="areaDescription" id="...">
-            <h3></h3>
+          <div class="areaDescription" id="ctHelp">
+            <h3>Help.</h3>
             <hr>
-            <p class="aboutFunction"></p>
-            <img src="..." class="descriptionImage" alt="...">
+            <p class="aboutFunction">Clicking "Guide" will bring up a detailed explanation of how this app works. There are four sections of instructions including recording vists, bluetooth tracing, contact alerts and retrace your steps. There is a large "Next" button to navigate through the pages, and if you want to need to go back to a previous page click the left arrow at the top of the page. Clicking the "X" at the top right will close the page and bring you back to the page shown in the image.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="ctDiary">
+            <h3>Diary.</h3>
+            <hr>
+            <p class="aboutFunction">Your diary shows all places you have scanned into for the past two weeks. To add an entry to a previous date click "Add diary entry", this will bring you to same page as if you were to manually enter a vist.</p>
+            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
+            <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
+            <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="ctCamera">
+            <h3>Camera.</h3>
+            <hr>
+            <p class="aboutFunction">This is where your camera will appear, it will not be black. When you're trying to scan the QR Code try to align it in between the four corners. If the camera is not picking up the QR Code you can try turning on the torch, which is located below the right corner. Below is an example of a QR Code.</p>
+            <img src="/images/ctQR.jpg" class="descriptionImage" alt="QR Code">
+            <p class="aboutFunction">This QR Code will bring you to the Ministry Of Healths offical website, explaining more on the COVID TRACER APP.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="ctManualDiary">
+            <h3>Manual Diary.</h3>
+            <hr>
+            <p class="aboutFunction">If you are unable to scan the code for whatever reason, clicking this gives you the option to enter your vist manually. The following image is what will be displayed when you click it:</p>
+            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
+            <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
+            <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="ctDashboard">
+            <h3>Dashboard.</h3>
+            <hr>
+            <p class="aboutFunction">The dashboard is a page of the latest announcements, what's new, tracing and latest updates around COVID-19 in New Zealand and the app. You can also click the "More info" tab at the top, which gives you more infomation on Alert Levels, Contact tracing, Vaccines and help with your mental wellbeing.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="ctRecordVist">
+            <h3>Record Vist.</h3>
+            <hr>
+            <p class="aboutFunction">This is the page the loads when you open the app and the one that is displayed in the image. This button allows you to return to this page if your on the Dashboard or Your Data.</p>
+            <br>
+          </div>
+
+          <div class="areaDescription" id="ctMyData">
+            <h3>My Data.</h3>
+            <hr>
+            <p class="aboutFunction">The My Data page contains multiple things including:</p>
+            <p class="aboutFunction"><b>Information stored privately: </b>This includes your diary of vists, saved locations and your NHI number.</p>
+            <p class="aboutFunction"><b>Information shared with contact tracers: </b>This allows you to fill in your contact details, that allows the government to contact you sonner if they need to.</p>
+            <p class="aboutFunction"><b>If you test positive: </b>This area is important if you test positive for COVID-19, it allows you to share your digital diary and bluetooth tracing codes.</p>
+            <p class="aboutFunction"><b>Setting and support: </b>If you need any help, want to give feedback or change your notification preferences it is located under this header.</p>
             <br>
           </div>
 
@@ -67,11 +122,19 @@
       </div>
 
       <!--Image in the image map. The "usemap" links the image to the map.-->
-      <img src="..." usemap="#image-map" class="imageMapImage" alt="...">
+      <img src="/images/covidHome.jpg" usemap="#image-map" class="imageMapImage" alt="Covid Home Page">
 
       <!--Image map made on "https://www.image-map.net/"-->
       <!--Each area is a different button on the home page, which is why the coords differ. The "data-target" links the area to its description and the "onclick" gets rid of the text that is dispalyed in the beginning when an area is clicked.-->
-        
+      <map name="image-map">
+        <area alt="Help" title="Help" href="javascript:void(0)" coords="14,15,216,131" shape="rect" class="imageMapCoords" data-target="ctHelp" onclick="beginningText()" />
+        <area alt="Diary" title="Diary" href="javascript:void(0)" coords="869,13,1066,135" shape="rect" class="imageMapCoords" data-target="ctDiary" onclick="beginningText()" />
+        <area alt="Camera" title="Camera" href="javascript:void(0)" coords="7,154,1071,1780" shape="rect" class="imageMapCoords" data-target="ctCamera" onclick="beginningText()" />
+        <area alt="Manual Diary" title="Manual Diary" href="javascript:void(0)" coords="9,1804,1070,1991" shape="rect" class="imageMapCoords" data-target="ctManualDiary" onclick="beginningText()" />
+        <area alt="Dashboard" title="Dashboard" href="javascript:void(0)" coords="14,2014,333,2127" shape="rect" class="imageMapCoords" data-target="ctDashboard" onclick="beginningText()" />
+        <area alt="Record Vist" title="Record Vist" href="javascript:void(0)" coords="368,2014,710,2128" shape="rect" class="imageMapCoords" data-target="ctRecordVist" onclick="beginningText()" />
+        <area alt="My Data" title="My Data" href="javascript:void(0)" coords="754,2014,1057,2128" shape="rect" class="imageMapCoords" data-target="ctMyData" onclick="beginningText()" />
+      </map>
 
 
     </div>
@@ -84,11 +147,11 @@
           <h3>Image failed:</h3>
           <hr>
           <!--Explaning the that you will still recieve the same amount of imformation just less interactive when the image map failed.-->
-          <p class="padding2">The image was supposed to give you a detailed explanation of different parts of ... when you clicked certain features on the image. This page gives you the same amount of information, but instead of you clicking the image, the different sections are shown, which will display more information when you click the title. When you click the section again it will close, don't worry you can open and close the sections as many times as you want.</p>
+          <p class="padding2">The image was supposed to give you a detailed explanation of different parts of the NZ COVID TRACER APP when you clicked certain features on the image. This page gives you the same amount of information, but instead of you clicking the image, the different sections are shown, which will display more information when you click the title. When you click the section again it will close, don't worry you can open and close the sections as many times as you want.</p>
           <hr>
           <!--Image of the home page, casue they are no longer clicking the image-->
           <p class="padding2"><b>Home Page:</b></p>
-          <img src="..." class="descriptionImage" alt="...">
+          <img src="/images/covidHome.jpg" class="descriptionImage" alt="Covid Tracer home page">
           <hr>
           <!--Allowing the user to go back to the previous page if they want.-->
           <p class="padding2">Accidentally clicked the button or want to try the image again, click this button to bring you back to the previous page:</p>
@@ -108,9 +171,59 @@
         <div class="insideBox">
 
           <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
-          <button class="accordion"></button>
+          <button class="accordion">Help</button>
           <div class="section">
-            
+            <p class="aboutFunction">Clicking "Guide" in the top left corner, will bring up a detailed explanation of how this app works. There are four sections of instructions including recording vists, bluetooth tracing, contact alerts and retrace your steps. There is a large "Next" button to navigate through the pages, and if you want to need to go back to a previous page click the left arrow at the top of the page. Clicking the "X" at the top right will close the page and bring you back to the page shown in the image.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Diary</button>
+          <div class="section">
+            <p class="aboutFunction">Your diary in the top right corner shows all places you have scanned into for the past two weeks. To add an entry to a previous date click "Add diary entry", this will bring you to same page as if you were to manually enter a vist.</p>
+            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
+            <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
+            <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Camera</button>
+          <div class="section">
+            <p class="aboutFunction">This is where your camera will appear, it will not be black. When you're trying to scan the QR Code try to align it in between the four corners. If the camera is not picking up the QR Code you can try turning on the torch, which is located below the right corner. Below is an example of a QR Code.</p>
+            <img src="/images/ctQR.jpg" class="descriptionImage" alt="QR Code">
+            <p class="aboutFunction">This QR Code will bring you to the Ministry Of Healths offical website, explaining more on the COVID TRACER APP.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Manual Diary</button>
+          <div class="section">
+            <p class="aboutFunction">If you are unable to scan the code for whatever reason, clicking "Add a diary entry manually" gives you the option to enter your vist manually. The following image is what will be displayed when you click it:</p>
+            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
+            <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
+            <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Dashboard</button>
+          <div class="section">
+            <p class="aboutFunction">Located in the bottom left corner, the dashboard is a page of the latest announcements, what's new, tracing and latest updates around COVID-19 in New Zealand and the app. You can also click the "More info" tab at the top, which gives you more infomation on Alert Levels, Contact tracing, Vaccines and help with your mental wellbeing.</p>
+            <br>
+          </div>
+
+          <button class="accordion">Record a Vist</button>
+          <div class="section">
+            <p class="aboutFunction">Located in the middle of the row of buttons at the bottom, this is the page the loads when you open the app and the one that is displayed in the image. This button allows you to return to this page if your on the Dashboard or Your Data.</p>
+            <br>
+          </div>
+
+          <button class="accordion">My Data</button>
+          <div class="section">
+            <p class="aboutFunction">The My Data page is found in the bottom right corner, it contains multiple things including:</p>
+            <p class="aboutFunction"><b>Information stored privately: </b>This includes your diary of vists, saved locations and your NHI number.</p>
+            <p class="aboutFunction"><b>Information shared with contact tracers: </b>This allows you to fill in your contact details, that allows the government to contact you sonner if they need to.</p>
+            <p class="aboutFunction"><b>If you test positive: </b>This area is important if you test positive for COVID-19, it allows you to share your digital diary and bluetooth tracing codes.</p>
+            <p class="aboutFunction"><b>Setting and support: </b>If you need any help, want to give feedback or change your notification preferences it is located under this header.</p>
             <br>
           </div>
 
