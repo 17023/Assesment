@@ -80,13 +80,6 @@
   display: none;
 }
 
-/*Gap between boxes*/
-.gap {
-  color: rgba(24, 25, 26, 0);
-  font-size: 0.1px;
-  user-select: none;
-}
-
 /*Buttons on the fbProfile section*/
 .directionButtons {
   cursor: pointer;

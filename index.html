@@ -1,113 +1,120 @@
 <!DOCTYPE html>
 
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phone Help</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/phone.png">
-    <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
-    <link href="stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/>
-    <script src="script.js"></script>
-  </head>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Phone Help</title>
+      <link rel="shortcut icon" type="image/x-icon" href="images/shortcutIconPhone.png">
+      <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
+      <link href="stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/>
+      <script src="script.js"></script>
+   </head>
 
-  <body>
+   <body>
+      <!--Navigation-->
+      <img alt="Computer Image" class="headerImage" src="../images/headerImage.png" style="height:20rem; width:100%;">
+      <img alt="Computer Image" class="headerImage2" src="../images/headerImage2.png" style="height:25rem; width:100%;">
+      <nav>
+         <div class="navText">PHONE HELP</div>
+         <a href="../helpPage.html">HELP</a>
+         <a href="../index.html">HOME</a>
+      </nav>
+      <h2 class="headerText">Phone Help.</h2>
 
-    <!--Navigation-->
-    <img alt="Computer Image" class="headerImage" src="../images/headerImage.png" style="height:20rem; width:100%;">
-    <img alt="Computer Image" class="headerImage2" src="../images/headerImage2.png" style="height:25rem; width:100%;">
-    <nav>
-      <div class="navText">PHONE HELP</div>
-      <a href="../helpPage.html">HELP</a>
-      <a href="../index.html">HOME</a>
-    </nav>
-    <h2 class="headerText">Phone Help.</h2>
+      <!--Help button-->
+      <a class="helpButton" href="../helpPage.html">?</a>
 
-    <!--Help button-->
-    <a class="helpButton" href="../helpPage.html">?</a>
-
-    <!--Popup-->
-    <div class="popup" id="popup">
-      <div class="centre">
-        <div class="popupContent">
-          <h2>WELCOME.</h2>
-          <hr>
-          <p>If you are confused about functioning this website, click the 'HELP' button in the navigation bar or the question mark button down the bottom. These buttons will lead you to a page that will break down how to use this website.</p>
-          <p>Click the button below to leave this message and carry on to the website.</p>
-          <div class="container">
-            <div class="centre">
-              <button class="buttons" onclick="closePopup()">CLICK HERE</button>
+      <!--Popup-->
+      <div class="popup" id="popup">
+         <div class="centre">
+            <div class="popupContent">
+               <h2>WELCOME.</h2>
+               <hr>
+               <p>If you are confused about functioning this website, click the 'HELP' button in the navigation bar or the question mark button down the bottom. These buttons will lead you to a page that will break down how to use this website.</p>
+               <p>Click the button below to leave this message and carry on to the website.</p>
+               <div class="container">
+                  <div class="centre">
+                     <button class="buttons" onclick="closePopup()">CLICK HERE</button>
+                  </div>
+               </div>
+               <br>
             </div>
-          </div>
+         </div>
+      </div>
+
+      <!--Padding around the page-->
+      <div class="padding">
+
+         <!--Description-->
+         <p class="description">This website is designed to help you with operating your mobile phone, whether it be a new device or something on your current device that you're struggling with. This website has two sections, the first has popular/useful apps that you may need help with, and the second is a quiz that you can take to determine your phone type to get specified instructions to operate pre-installed apps.</p>
+        <br><br><hr><br>
+
+        <!--Apps-->
+        <div class="sectionOneApps">
+          <div class="title">APPS.</div>
           <br>
+
+          <!--Facebook-->
+          <div class="aroundApp">
+              <div class="app">
+                <a href="apps/facebook.html" style="text-decoration: none;">
+                    <img src="../images/facebook/fbLogo.png" alt="Facebook" width="600" height="400">
+                    <div class="appName">Facebook</div>
+                </a>
+              </div>
+          </div>
+
+          <!--Gmail-->
+          <div class="aroundApp">
+              <div class="app">
+                <a href="apps/gmail.html" style="text-decoration: none;">
+                    <img src="../images/gmail/gmLogo.png" alt="Gmail" width="600" height="400">
+                    <div class="appName">Gmail</div>
+                </a>
+              </div>
+          </div>
+
+          <!--Messenger-->
+          <div class="aroundApp">
+              <div class="app">
+                <a href="apps/messenger.html" style="text-decoration: none;">
+                    <img src="../images/messenger/mLogo.png" alt="Messanger" width="600" height="400"> 
+                    <div class="appName">Messenger</div>
+                </a>
+              </div>
+          </div>
+
+          <!--NZ Herald-->
+          <div class="aroundApp">
+              <div class="app">
+                <a href="apps/herald.html" style="text-decoration: none;">
+                    <img src="../images/herald/nzhLogo.jpg" alt="Herald" width="600" height="400">
+                    <div class="appName">Herald</div>
+                </a>
+              </div>
+          </div>
+
+          <!--NZ COVID Tracer-->
+          <div class="aroundApp">
+              <div class="app">
+                <a href="apps/covidTracer.html" style="text-decoration: none;">
+                    <img src="../images/covidTracer/ctLogo.jpg" alt="Covid Tracer App" width="600" height="400"> 
+                    <div class="appNameDisplayed">Covid Tracer</div>
+                    <div class="appNameHidden">Tracer</div>
+                </a>
+              </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <!--Padding around the page-->
-    <div class="padding">
+        <p class="gap">...</p>
+        <br><br><hr><br>
 
-      <!--Description-->
-      <div class="description">
-        <p>This website is designed to help you with operating your mobile phone, whether it be a new device or something on your current device that you're struggling with. This website has two sections, the first has popular/useful apps that you may need help with, and the second is a quiz that you can take to determine your phone type to get specified instructions to operate pre-installed apps.</p>
-        <br>
-      </div>
-      <br><hr><br>
+         <!--Quiz-->
+         <div class="title">QUIZ.</div>
+         <br>
+         <p class="description">.....</p>
 
-      <!--Apps-->
-      <div class="title">APPS.</div>
-      <br>
-      <!--Facebook-->
-      <div class="aroundApp">
-        <div class="app">
-          <a href="apps/facebook.html" style="text-decoration: none;">
-            <img src="../images/facebook.png" alt="Facebook" width="600" height="400">
-            <div class="appName">Facebook</div>
-          </a>
-        </div>
       </div>
-
-      <!--Gmail-->
-      <div class="aroundApp">
-        <div class="app">
-          <a href="apps/gmail.html" style="text-decoration: none;">
-            <img src="../images/gmail.png" alt="Gmail" width="600" height="400">
-            <div class="appName">Gmail</div>
-          </a>
-        </div>
-      </div>
-
-      <!--Messenger-->
-      <div class="aroundApp">
-        <div class="app">
-          <a href="apps/messenger.html" style="text-decoration: none;">
-            <img src="../images/messenger.png" alt="Messanger" width="600" height="400"> 
-            <div class="appName">Messenger</div>
-          </a>
-        </div>
-      </div>
-
-      <!--NZ Herald-->
-      <div class="aroundApp">
-        <div class="app">
-          <a href="apps/herald.html" style="text-decoration: none;">
-            <img src="../images/herald.jpg" alt="Herald" width="600" height="400">
-            <div class="appName">Herald</div>
-          </a>
-        </div>
-      </div>
-
-      <!--NZ COVID Tracer-->
-      <div class="aroundApp">
-        <div class="app">
-          <a href="apps/covidTracer.html" style="text-decoration: none;">
-            <img src="../images/covid.jpg" alt="Covid Tracer App" width="600" height="400"> 
-            <div class="appNameDisplayed">Covid Tracer</div>
-            <div class="appNameHidden">Tracer</div>
-          </a>
-        </div>
-      </div>
-   
-    </div>
-  </body>
+   </body>
 </html>

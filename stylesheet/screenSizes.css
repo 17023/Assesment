@@ -13,6 +13,7 @@
   }
   .appNameDisplayed {display: none;}
   .appNameHidden {display: block;}
+  .sectionOneApps {margin-bottom: 15rem;}
 }
  
 /*When the screen is at least 650px wide*/
@@ -36,6 +37,7 @@
   .smallScreenText {display: block;}
   .largeScreenText {display: none;}
   .appDescription {padding: 0.4rem 2rem;}
+  .sectionOneApps {margin-bottom: 30rem;}
 }
 
 /*When the screen is at least 900px wide*/

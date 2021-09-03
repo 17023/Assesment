@@ -116,6 +116,13 @@ nav a:hover {border-bottom: 0.25rem solid #1A1739;}
 /*Padding around everything except header*/
 .padding {padding: 2rem 1rem 1rem 1rem;}
 
+/*Gap between boxes*/
+.gap {
+  color: rgba(24, 25, 26, 0);
+  font-size: 0.1px;
+  user-select: none;
+}
+
 /*HOME PAGE*/
 
 /*Popup - black background*/

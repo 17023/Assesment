@@ -5,12 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Phone Help</title> <!--Text displayed on the broweser tab-->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/phone.png"> <!--Icon displayed on the browser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/shortcutIconPhone.png"> <!--Icon displayed on the browser tab-->
     <link href="/stylesheet/style.css" rel="stylesheet" type="text/css"/> <!--Original stylesheet used one all pages-->
     <link href="/stylesheet/apps.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for the apps used-->
     <link href="/stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
     <script src="https://kit.fontawesome.com/2b6b0f843b.js" crossorigin="anonymous"></script> <!--Stylesheet for icons used from Font Awesome-->
-    <script src="../script.js" type="text/javascript"></script> <!--The code validator says to remove the type attribute from the line of code, however without it the page runs withs errors-->
+    <script src="../script.js" type="text/javascript"></script> <!--Javascipt used bewtween multiple pages-->
   </head>
 
   <body>
@@ -23,7 +23,7 @@
     </nav>
 
     <!--Description of the app-->
-    <h1 class="appHeader" style="color: #E84A2E">Gmail</h1>
+    <h1 class="appHeader" style="color: #E84A2E">Gmail.</h1>
     <p class="appDescription">This app is a way of sending free and recieve digital letters from people all over the world. Gmail is an app you can download from the App Store on apple products or the Play Store on androids.</p>
 
     <!--Help button-->
@@ -55,7 +55,6 @@
           </div>
 
           <!--Different section explanations that are displayed when the user clicks the corresponding coordinates on the image map. Some sections contain images for extra details or links to the Google help page if necessary.-->
-
           <div class="areaDescription" id="gmGoBack">
             <h3>Go Back.</h3>
             <hr>
@@ -81,7 +80,7 @@
             <h3>Mark as Unread</h3>
             <hr>
             <p class="aboutFunction">If you have opened the email but wish to mark it as unread, clicking this button will mark it as unread. The sender won't be notified, so you can read and unread the email as many times as you want.</p>
-            <img src="/images/gmUnread.png" class="descriptionImage" alt="Unread vs Reaf">
+            <img src="/images/gmail/gmUnread.png" class="descriptionImage" alt="Unread vs Reaf">
             <p class="aboutFunction">The image above is the difference between unread and read emails in your inbox. If the text is bold you have either not read the email or you have marked it as unread.</p>
             <br>
           </div>
@@ -111,7 +110,7 @@
             <h3>Reply.</h3>
             <hr>
             <p class="aboutFunction">This will bring up a new page which will look like your typing a new email, however, some of the parts have already been filled in.</p>
-            <img src="/images/gmReply.jpg" class="descriptionImage" alt="Reply Example">
+            <img src="/images/gmail/gmReply.jpg" class="descriptionImage" alt="Reply Example">
             <p class="aboutFunction">Clicking the word "Reply" at the top will bring down three options:</p>
             <p class="aboutFunction"><b>Reply:  </b>This will reply to just the sender of the message.</p>
             <p class="aboutFunction"><b>Reply all:  </b>If the message had been sent to multiple people, clicking "Reply all" will send your reply to everyone.</p>
@@ -177,7 +176,7 @@
       </div>
 
       <!--Image in the image map. The "usemap" links the image to the map.-->
-      <img src="/images/gmailEmail.jpg" usemap="#image-map" class="imageMapImage" alt="Gmail Email">
+      <img src="/images/gmail/gmEmail.jpg" usemap="#image-map" class="imageMapImage" alt="Gmail Email">
 
       <!--Image map made on "https://www.image-map.net/"-->
       <!--Each area is a different button on the home page, which is why the coords differ. The "data-target" links the area to its description and the "onclick" gets rid of the text that is dispalyed in the beginning when an area is clicked.-->
@@ -211,7 +210,7 @@
           <hr>
           <!--Image of the home page, casue they are no longer clicking the image-->
           <p class="padding2"><b>Home Page:</b></p>
-          <img src="/images/gmailEmail.jpg" class="descriptionImage" alt="Email">
+          <img src="/images/gmail/gmgmEmail.jpg" class="descriptionImage" alt="Email">
           <hr>
           <!--Allowing the user to go back to the previous page if they want.-->
           <p class="padding2">Accidentally clicked the button or want to try the image again, click this button to bring you back to the previous page:</p>
@@ -236,18 +235,21 @@
             <p class="aboutfunction">Located in the top left corner, looks like an arrow pointing left. This Button is relatively simple, clicking it will bring you back to your Inbox. Nothing will happen to the email, unless this was your first time reading the email it will be marked as read.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Archive</button>
           <div class="section">
             <p class="aboutFunction">This button at the top of the page, shapped like a box with a downwards arrow. Archieving your email is kind of like deleting the email, it will be removed from your inbox and placed into your "All Mail" folder. It will stay in the folder untill you either delete it or the sender replies to the email, which it will then re-appear in your inbox. You can also archive your email while you're on the inbox tab, by sliding the email to the left.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Delete</button>
           <div class="section">
             <p class="aboutFunction">Located in the row of buttons at the top and shaped like a rubbish bin. This button is pretty self explanatory, when you click it you will delete the email. If you wish to restore this email you have 30 days untill google permanently deletes it. To restore your email, go to the trash/bin tab in the side bar of your inbox.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">More Options</button>
           <div class="section">
@@ -261,17 +263,19 @@
             <p class="aboutFunction"><b>Help and feedback -  </b>If you are confused about any functions of Gmail, clicking this button will bring you to Googles help page for more detailed explainations.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Sender</button>
           <div class="section">
             <p class="aboutFunction">In this image the sender is "Joan Plum", this is where the sender details are also located. This is where you can see a few details the emails sender. The circle to the left is their profile picture and next to that is their name. You can also see the time/date of when the email was sent and if it was sent to others as well.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Reply</button>
           <div class="section">
             <p class="aboutFunction">This button is next to the information of the sender, it looks like a rounded left arrow. Clicking this will bring up a new page which will look like your typing a new email, however, some of the parts have already been filled in.</p>
-            <img src="/images/gmReply.jpg" class="descriptionImage" alt="Reply Example">
+            <img src="/images/gmail/gmReply.jpg" class="descriptionImage" alt="Reply Example">
             <p class="aboutFunction">Clicking the word "Reply" at the top will bring down three options:</p>
             <p class="aboutFunction"><b>Reply:  </b>This will reply to just the sender of the message.</p>
             <p class="aboutFunction"><b>Reply all:  </b>If the message had been sent to multiple people, clicking "Reply all" will send your reply to everyone.</p>
@@ -279,6 +283,7 @@
             <p class="aboutFunction">If you click the three horizontal buttons at the bottom, a copy of the original email will be displayed.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">More</button>
           <div class="section">
@@ -290,35 +295,40 @@
             <p class="aboutFunction"><b>Block "Joan Plum":  </b>If you don't want to recieve any more emails from the sender, blocking them will send any further emails to your spam folder.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Message</button>
           <div class="section">
             <p class="aboutFunction">This is located in the middle of the email. This is the message itself, it's what the sender wanted to you to know. There's not much of an explanation need for this part, the only thing you can do with it is read it.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Attached File.</button>
           <div class="section">
             <p class="aboutFunction">If someone has attached a file to the email it will be either displayed like this, or the like the image below. If it's displayed like this it will typically be a file from a Google application(e.g. Docs, Slide, Sheets, etc).</p>
-            <img src="/images/gmAttachedFile.jpg" class="descriptionImage" alt="Attached File">
+            <img src="/images/gmail/gmAttachedFile.jpg" class="descriptionImage" alt="Attached File">
             <p class="aboutFunction">Clicking the file link will bring you to the document which you can either view, comment or edit depending on what permission the owner has given you.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Image</button>
           <div class="section">
             <p class="aboutFunction">The attached file won't always be an image attached like this, it could also be a document, video, etc.</p>
-            <img src="/images/gmImage.jpg" class="descriptionImage" alt="Image">
+            <img src="/images/gmail/gmImage.jpg" class="descriptionImage" alt="Image">
             <p class="aboutFunction"><i class="fa fa-download" style="font-size:20px;color:#81868C"></i>  If you want to download the file to you phone, clicking this button will automatically download it.</p>
             <p class="aboutFunction"><i class="fab fa-google-drive" style="font-size:20px;color:#81868C;"></i>  If you want to save the file to your Google Drive, clicking this button will automatically save it.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Quick Responces</button>
           <div class="section">
             <p class="aboutFunction">Based on the key words in the email you have recieved, quick responces are  suggested for your reply at the bottom of the email. If you click the responce you will be taken to the writing the reply page with that message already written, all you have to do is send it.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Bottom Buttons</button>
           <div class="section">
@@ -329,6 +339,7 @@
             <p class="aboutFunction">If you click the three horizontal buttons at the bottom, a copy of the original email will be displayed.</p>
             <br>
           </div>
+          <br>
 
         </div>
       </div>

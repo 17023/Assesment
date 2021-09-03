@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Phone Help</title> <!--Text displayed on the broweser tab-->
-    <link rel="shortcut icon" type="image/x-icon" href="/images/phone.png"> <!--Icon displayed on the browser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="/images/shortcutIconPhone.png"> <!--Icon displayed on the browser tab-->
     <link href="/stylesheet/style.css" rel="stylesheet" type="text/css"/> <!--Original stylesheet used one all pages-->
     <link href="/stylesheet/apps.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for the apps used-->
     <link href="/stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
-    <script src="../script.js" type="text/javascript"></script>
+    <script src="../script.js" type="text/javascript"></script> <!--Javascipt used bewtween multiple pages-->
   </head>
 
   <body>
@@ -22,7 +22,7 @@
     </nav>
 
     <!--Description of the app-->
-    <h1 class="appHeader" style="color: #FFC300">Covid Tracer</h1>
+    <h1 class="appHeader" style="color: #FFC300">Covid Tracer.</h1>
     <p class="appDescription">This app can be downloaded on the App Store and the Google Play Store. It is a way of tracking your whereabouts so that it if you get infected by Covid-19 the government can trace any close contacts. They also use this app to let you know if you have come in contact with anyone that has Covid-19.</p>
 
     <!--Help button-->
@@ -35,7 +35,7 @@
       <div class="box" style="float: right;">
         <div class="insideBox">
 
-          <div id="beginningText"> <!--fix-->
+          <div id="beginningText">
             <h3>How to use this page:</h3> <!--Explanation on how to use the page-->
             <hr>
             <!--Two different explainations for if the user is user a laptop/computer or touch screen device-->
@@ -54,7 +54,6 @@
           </div>
 
           <!--Different section explanations that are displayed when the user clicks the corresponding coordinates on the image map. Some sections contain images for extra details or links to the Google help page if necessary.-->
-
           <div class="areaDescription" id="ctHelp">
             <h3>Help.</h3>
             <hr>
@@ -66,7 +65,7 @@
             <h3>Diary.</h3>
             <hr>
             <p class="aboutFunction">Your diary shows all places you have scanned into for the past two weeks. To add an entry to a previous date click "Add diary entry", this will bring you to same page as if you were to manually enter a vist.</p>
-            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <img src="/images/covidTracer/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
             <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
             <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
             <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
@@ -77,7 +76,7 @@
             <h3>Camera.</h3>
             <hr>
             <p class="aboutFunction">This is where your camera will appear, it will not be black. When you're trying to scan the QR Code try to align it in between the four corners. If the camera is not picking up the QR Code you can try turning on the torch, which is located below the right corner. Below is an example of a QR Code.</p>
-            <img src="/images/ctQR.jpg" class="descriptionImage" alt="QR Code">
+            <img src="/images/covidTracer/ctQR.jpg" class="descriptionImage" alt="QR Code">
             <p class="aboutFunction">This QR Code will bring you to the Ministry Of Healths offical website, explaining more on the COVID TRACER APP.</p>
             <br>
           </div>
@@ -86,7 +85,7 @@
             <h3>Manual Diary.</h3>
             <hr>
             <p class="aboutFunction">If you are unable to scan the code for whatever reason, clicking this gives you the option to enter your vist manually. The following image is what will be displayed when you click it:</p>
-            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <img src="/images/covidTracer/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
             <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
             <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
             <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
@@ -122,7 +121,7 @@
       </div>
 
       <!--Image in the image map. The "usemap" links the image to the map.-->
-      <img src="/images/covidHome.jpg" usemap="#image-map" class="imageMapImage" alt="Covid Home Page">
+      <img src="/images/covidTracer/ctHomePage.jpg" usemap="#image-map" class="imageMapImage" alt="Covid Home Page">
 
       <!--Image map made on "https://www.image-map.net/"-->
       <!--Each area is a different button on the home page, which is why the coords differ. The "data-target" links the area to its description and the "onclick" gets rid of the text that is dispalyed in the beginning when an area is clicked.-->
@@ -135,7 +134,6 @@
         <area alt="Record Vist" title="Record Vist" href="javascript:void(0)" coords="368,2014,710,2128" shape="rect" class="imageMapCoords" data-target="ctRecordVist" onclick="beginningText()" />
         <area alt="My Data" title="My Data" href="javascript:void(0)" coords="754,2014,1057,2128" shape="rect" class="imageMapCoords" data-target="ctMyData" onclick="beginningText()" />
       </map>
-
 
     </div>
   
@@ -151,7 +149,7 @@
           <hr>
           <!--Image of the home page, casue they are no longer clicking the image-->
           <p class="padding2"><b>Home Page:</b></p>
-          <img src="/images/covidHome.jpg" class="descriptionImage" alt="Covid Tracer home page">
+          <img src="/images/covidTracer/ctHomePage.jpg" class="descriptionImage" alt="Covid Tracer home page">
           <hr>
           <!--Allowing the user to go back to the previous page if they want.-->
           <p class="padding2">Accidentally clicked the button or want to try the image again, click this button to bring you back to the previous page:</p>
@@ -176,46 +174,52 @@
             <p class="aboutFunction">Clicking "Guide" in the top left corner, will bring up a detailed explanation of how this app works. There are four sections of instructions including recording vists, bluetooth tracing, contact alerts and retrace your steps. There is a large "Next" button to navigate through the pages, and if you want to need to go back to a previous page click the left arrow at the top of the page. Clicking the "X" at the top right will close the page and bring you back to the page shown in the image.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Diary</button>
           <div class="section">
             <p class="aboutFunction">Your diary in the top right corner shows all places you have scanned into for the past two weeks. To add an entry to a previous date click "Add diary entry", this will bring you to same page as if you were to manually enter a vist.</p>
-            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <img src="/images/covidTracer/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
             <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
             <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
             <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Camera</button>
           <div class="section">
             <p class="aboutFunction">This is where your camera will appear, it will not be black. When you're trying to scan the QR Code try to align it in between the four corners. If the camera is not picking up the QR Code you can try turning on the torch, which is located below the right corner. Below is an example of a QR Code.</p>
-            <img src="/images/ctQR.jpg" class="descriptionImage" alt="QR Code">
+            <img src="/images/covidTracer/ctQR.jpg" class="descriptionImage" alt="QR Code">
             <p class="aboutFunction">This QR Code will bring you to the Ministry Of Healths offical website, explaining more on the COVID TRACER APP.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Manual Diary</button>
           <div class="section">
             <p class="aboutFunction">If you are unable to scan the code for whatever reason, clicking "Add a diary entry manually" gives you the option to enter your vist manually. The following image is what will be displayed when you click it:</p>
-            <img src="/images/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
+            <img src="/images/covidTracer/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
             <p class="aboutFunction"><b>Place or activity:  </b>Clicking this will bring you to a new page where you can add the location of place you visted. You also have the option to say you stayed home or choose a location that you have saved previously.</p>
             <p class="aboutFunction"><b>Arrival date & Time:  </b>This date is automatically entered as today, however you can change it by clicking it.</p>
             <p class="aboutFunction"><b>Details:  </b>This is an optional part, however, it is helpful to full it out if you were with someone else especially if they don't have access to the NZ COVID TRACER APP.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Dashboard</button>
           <div class="section">
             <p class="aboutFunction">Located in the bottom left corner, the dashboard is a page of the latest announcements, what's new, tracing and latest updates around COVID-19 in New Zealand and the app. You can also click the "More info" tab at the top, which gives you more infomation on Alert Levels, Contact tracing, Vaccines and help with your mental wellbeing.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">Record a Vist</button>
           <div class="section">
             <p class="aboutFunction">Located in the middle of the row of buttons at the bottom, this is the page the loads when you open the app and the one that is displayed in the image. This button allows you to return to this page if your on the Dashboard or Your Data.</p>
             <br>
           </div>
+          <br>
 
           <button class="accordion">My Data</button>
           <div class="section">
@@ -226,6 +230,7 @@
             <p class="aboutFunction"><b>Setting and support: </b>If you need any help, want to give feedback or change your notification preferences it is located under this header.</p>
             <br>
           </div>
+          <br>
 
         </div>
       </div>
