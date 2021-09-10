@@ -47,7 +47,7 @@
             <p class="gap">...</p>
             <div class="container">
               <div class="centre">
-                <button class="buttons" onclick="imageMapFailed()">Click Here</button>
+                <button type="button" class="buttons" onclick="imageMapFailed()">Click Here</button>
               </div>
             </div>
             <br>
@@ -156,7 +156,7 @@
           <p class="gap">...</p>
           <div class="container">
             <div class="centre">
-              <button class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
+              <button type="button" class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
             </div>
           </div>
           <br>
@@ -169,14 +169,14 @@
         <div class="insideBox">
 
           <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
-          <button class="accordion">Search</button>
+          <button type="button" class="accordion">Search</button>
           <div class="section">
             <p class="aboutFunction">This button allows you to search for articles on the New Zealand Herald app. When searching it's best to use keywords rather than searching with long scentences, this is because you more likely to find articles using keywords.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Weather</button>
+          <button type="button" class="accordion">Weather</button>
           <div class="section">
             <p class="aboutFunction">The weather icon in the top right shows you the current weather for your selected region. If you wish to change the displayed region, clicking the icon will bring you to the following page.</p>
             <img src="/images/herald/nzhWeather.jpg" class="descriptionImage" alt="Weather">
@@ -185,7 +185,7 @@
           </div>
           <br>
 
-          <button class="accordion">Top Buttons</button>
+          <button type="button" class="accordion">Top Buttons</button>
           <div class="section">
             <p class="aboutFunction">These buttons are designed to help you navigate between the different pages on the NZ Herald. If a button has a blue line underneth the text(In the photo below "Home" does) this indicates that you are currently on this page. You can swipe left/right to show more pages.</p>
             <img src="/images/herald/nzhTopButtons.gif" class="descriptionImage" alt="Top Buttons">
@@ -197,7 +197,7 @@
           </div>
           <br>
 
-          <button class="accordion">Articles</button>
+          <button type="button" class="accordion">Articles</button>
           <div class="section">
             <p class="aboutFunction">The following image is the basic outline of what an all article you click will look like. The information they contain will be different but the way they function will be the same. To read the article simply swipe your finger up the device, this will scroll the page down for you to continue reading.</p>
             <img src="/images/herald/nzhArticle.jpg" class="descriptionImage" alt="Article">
@@ -210,7 +210,7 @@
           </div>
           <br>
 
-          <button class="accordion">Alert</button>
+          <button type="button" class="accordion">Alert</button>
           <div class="section">
             <p class="aboutFunction">The red box down the bottom continues in a loop, displaying the latest news that NZ Herald thinks is important. To make this section disapper, you can either click the "X" button to the right, or click the text which will bring you to the article.</p>
             <img src="/images/herald/nzhBottomButtons.jpg" class="descriptionImage" alt="Bottom Buttons">
@@ -218,7 +218,7 @@
           </div>
           <br>
 
-          <button class="accordion">Bottom Buttons</button>
+          <button type="button" class="accordion">Bottom Buttons</button>
           <div class="section">
             <p class="aboutFunction">There are four buttons down the bottom of the page which all function differently. The Home page is the one that will be displayed when you first open the app. This page contains everything seen in the image next to or below this box.</p>
             <img src="/images/herald/nzhBottomButtons.jpg" class="descriptionImage" alt="Bottom Buttons">
@@ -251,23 +251,23 @@
       });
 
       //Shows the area in image map when clicked
-      $('.imageMapCoords').click(function(e) {
-        e.preventDefault();
-        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      $('.imageMapCoords').click(function(e) { //When an element with class="imageMapCoords" is clicked function e operates
+        e.preventDefault(); //The defult action is not implemented
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show(); //Shows the id with the same data-target
       })
 
-      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
-      var accordion = document.getElementsByClassName("accordion");
+      //Variables are set/decleared
+      var accordion = document.getElementsByClassName("accordion")
       var i;
-
-      for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener("click", function() {
-          this.classList.toggle("open");
-          var section = this.nextElementSibling;
-          if (section.style.maxHeight) {
-            section.style.maxHeight = null;
-          } else {
-            section.style.maxHeight = section.scrollHeight + "px";
+      //Shows the information in the accordion when header is clicked
+      for (i = 0; i < accordion.length; i++) { //Allows the function to loop so it can happen infinite amount of times
+        accordion[i].addEventListener("click", function() { //Accordion clicked
+          this.classList.toggle("open"); //Opens the accordion
+          var section = this.nextElementSibling; //Section is the following element
+          if (section.style.maxHeight) { //If the section is at max height the following is done
+            section.style.maxHeight = null; //Hides the information
+          } else { //When section is not at max height when heade clicked
+            section.style.maxHeight = section.scrollHeight + "px"; //Shows the information
           } 
         });
       }

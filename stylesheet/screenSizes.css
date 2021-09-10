@@ -3,7 +3,7 @@
 
 /*When the screen is at most 500px wide*/
 @media only screen and (max-width: 500px) {
-  .aroundApp {
+  .aroundFunction {
     padding-bottom: 0.3125rem;
     width: 49.9999%;
   }
@@ -13,7 +13,7 @@
   }
   .appNameDisplayed {display: none;}
   .appNameHidden {display: block;}
-  .sectionOneApps {margin-bottom: 15rem;}
+  .sectionApps {margin-bottom: 15rem;}
 }
  
 /*When the screen is at least 650px wide*/
@@ -23,7 +23,7 @@
 
 /*When the screen is at most 700px wide*/
 @media only screen and (max-width: 700px) {
-  .aroundApp {
+  .aroundFunction {
     margin: 0.375rem 0;
     padding-bottom: 0.4375rem;
     width: 33%;
@@ -37,7 +37,8 @@
   .smallScreenText {display: block;}
   .largeScreenText {display: none;}
   .appDescription {padding: 0.4rem 2rem;}
-  .sectionOneApps {margin-bottom: 30rem;}
+  .sectionApps {margin-bottom: 30rem;}
+  .sectionPhone {margin-bottom: 23rem;}
 }
 
 /*When the screen is at least 900px wide*/
@@ -51,5 +52,4 @@
 @media screen and (min-width: 1200px) {
   * {font-size: 20px;}
   .padding {padding: 2rem 7rem 1rem 7rem;}
-  .description {text-align: center;}
 }

@@ -86,9 +86,9 @@
   background-color: white;
   border: 1px solid rgb(24, 25, 26);
   border-radius: 50%;
-  font-size: 22px;
+  font-size: 1.4rem;
   margin: 0 0.3rem;
-  padding: 8px 16px;
+  padding: 0.2rem 0.6rem;
 }
 
 /*When the mouse hovers the button*/
@@ -125,13 +125,4 @@
   overflow: hidden;
   padding: 0 18px;
   transition: max-height 0.25s ease-out;
-}
-
-/*Footer*/
-footer {
-  background-color: rgba(24, 25, 26, 0.3); /*0.3 = opacity*/
-  bottom: 0;
-  color: rgb(254, 254, 254);
-  user-select: none;
-  width: 100%;
 }

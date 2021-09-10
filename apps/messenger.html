@@ -47,7 +47,7 @@
             <p class="gap">...</p>
             <div class="container">
               <div class="centre">
-                <button class="buttons" onclick="imageMapFailed()">Click Here</button>
+                <button type="button" class="buttons" onclick="imageMapFailed()">Click Here</button>
               </div>
             </div>
             <br>
@@ -172,7 +172,7 @@
           <p class="gap">...</p>
           <div class="container">
             <div class="centre">
-              <button class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
+              <button type="button" class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
             </div>
           </div>
           <br>
@@ -185,7 +185,7 @@
         <div class="insideBox">
 
           <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
-          <button class="accordion">Account</button>
+          <button type="button" class="accordion">Account</button>
           <div class="section">
             <p class="aboutFunction">Clicking your profile picture in the top left corner, will bring you to a page with everything realted to your profile. Descriptions of different options are listed below:</p>
             <p class="aboutFunction"><b>Message Requests:  </b>These include messages people have tried to send you. Messenger categorises these messages into two groups those from people you may know and the ones they think maybe spam. You can navigate between these messages by clicking the two headers displayed in the image below.</p>
@@ -201,35 +201,35 @@
           </div>
           <br>
 
-          <button class="accordion">Camera</button>
+          <button type="button" class="accordion">Camera</button>
           <div class="section">
             <p class="aboutFunction">Located at the top right corner, and looks like a camera. Taking a photo allows you to send it to either your story or to a desired person/group. When you open the camera you can choose to take a photo or video by either clicking the circle button(for a photo) or holding down the circle button(for a video). After you take the photo you have multiple options to customise your photo/video, including stickers, drawing and text.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">New Message</button>
+          <button type="button" class="accordion">New Message</button>
           <div class="section">
             <p class="aboutFunction">The button in the top right corner allows you to create a new message. If you want to search for a person to message, using the search bar at the top that appears after clicking new message will allow you to do so. You will have to search by their Facebook name in order to find them. Clicking "Create a New Group" allows you to choose which recipents you would like in a group.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Search</button>
+          <button type="button" class="accordion">Search</button>
           <div class="section">
             <p class="aboutFunction">The search bar at the top allows you to search through your messages. This is helpful if you have a long page of messages, but your looking for a person.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Create Room</button>
+          <button type="button" class="accordion">Create Room</button>
           <div class="section">
             <p class="aboutFunction">Create a room is the same as a video call. It allows you to facetime your friends/contacts. When you click Create Room you are given the option to choose who you would like to invite to the call.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Message</button>
+          <button type="button" class="accordion">Message</button>
           <div class="section">
             <p class="aboutFunction">This is the message itself, if the beginning of it says "You:" this means you were the one that sent the message, if not the message was sent to you. The images below are the difference between unread and read messages:</p>
             <p class="aboutFunction"><b>Unread.</b></p>
@@ -247,14 +247,14 @@
           </div>
           <br>
 
-          <button class="accordion">Chats</button>
+          <button type="button" class="accordion">Chats</button>
           <div class="section">
             <p class="aboutFunction">There are two tabs down the bottom, the "Chats" one or the "People" one. When you open Messenger, whether it be from your home screen or from Facebook it will always open the "Chats" tab. The point of this button is to allow you to return to your chats after your on the peoples tab.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">People</button>
+          <button type="button" class="accordion">People</button>
           <div class="section">
             <p class="aboutFunction">There are two tabs down the bottom, the "Chats" one or the "People" one. The peoples tab allows you to see what friends are active and any stories that have been posted. The number that appears on top is the number of active friends.</p>
             <br>
@@ -278,23 +278,23 @@
       });
 
       //Shows the area in image map when clicked
-      $('.imageMapCoords').click(function(e) {
-        e.preventDefault();
-        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      $('.imageMapCoords').click(function(e) { //When an element with class="imageMapCoords" is clicked function e operates
+        e.preventDefault(); //The defult action is not implemented
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show(); //Shows the id with the same data-target
       })
 
-      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
-      var accordion = document.getElementsByClassName("accordion");
+      //Variables are set/decleared
+      var accordion = document.getElementsByClassName("accordion")
       var i;
-
-      for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener("click", function() {
-          this.classList.toggle("open");
-          var section = this.nextElementSibling;
-          if (section.style.maxHeight) {
-            section.style.maxHeight = null;
-          } else {
-            section.style.maxHeight = section.scrollHeight + "px";
+      //Shows the information in the accordion when header is clicked
+      for (i = 0; i < accordion.length; i++) { //Allows the function to loop so it can happen infinite amount of times
+        accordion[i].addEventListener("click", function() { //Accordion clicked
+          this.classList.toggle("open"); //Opens the accordion
+          var section = this.nextElementSibling; //Section is the following element
+          if (section.style.maxHeight) { //If the section is at max height the following is done
+            section.style.maxHeight = null; //Hides the information
+          } else { //When section is not at max height when heade clicked
+            section.style.maxHeight = section.scrollHeight + "px"; //Shows the information
           } 
         });
       }

@@ -48,7 +48,7 @@
             <p class="gap">...</p>
             <div class="container">
               <div class="centre">
-                <button class="buttons" onclick="imageMapFailed()">Click Here</button> <!--fix-->
+                <button type="button" class="buttons" onclick="imageMapFailed()">Click Here</button> <!--fix-->
               </div>
             </div>
             <br>
@@ -173,7 +173,7 @@
           <p class="gap">...</p>
           <div class="container">
             <div class="centre">
-              <button class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again--> <!--fix-->
+              <button type="button" class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again--> <!--fix-->
             </div>
           </div>
           <br>
@@ -186,7 +186,7 @@
         <div class="insideBox">
 
           <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
-          <button class="accordion">Side Bars. (Three Lines)</button>
+          <button type="button" class="accordion">Side Bars. (Three Lines)</button>
           <div class="section">
             <p class="aboutFunction">When you click the side bar a tab will appear from the left with the following options for you to click. To get back to your inbox from either this tab or if you have clicked one of the options, just click the button that says "Inbox" in this tab.</p>
             <p class="aboutFunction"><b>Starred:  </b>This is where all of the emails that you have starred will appear(they will still be in your inbox though). Starred emails can help you distinguish between important and unimportant emails.</p>
@@ -204,7 +204,7 @@
           </div>
           <br>
 
-          <button class="accordion">Search Mail</button>
+          <button type="button" class="accordion">Search Mail</button>
           <div class="section">
             <p class="aboutFunction">If you wish to find an email in your inbox but are unable to, using this Search bar will help.</p>
             <img src="/images/gmail/gmSearch.jpg" class="descriptionImage" alt="Search Mail">
@@ -213,7 +213,7 @@
           </div>
           <br>
 
-          <button class="accordion">Account</button>
+          <button type="button" class="accordion">Account</button>
           <div class="section">
             <p class="aboutFunction">This is your account, whatever you have chosen as your profile picture will be displayed here. Clicking this will bring up:</p>
             <p class="aboutFunction"><b style="color: #E84A2E">&#9711;  </b>Any other accounts you are signed into for you to access. Changing accounts will not sign you out of the account your on now, so you are able to return to this one afterwards.</p>
@@ -223,7 +223,7 @@
           </div>
           <br>
 
-          <button class="accordion">Email</button>
+          <button type="button" class="accordion">Email</button>
           <div class="section">
             <p class="aboutFunction">This is an email that you have recieved from another person. If  you haven't read the email before the text will appear bold, displayed in the image below.</p>
             <img src="/images/gmail/gmUnread.png" class="descriptionImage" alt="Unread vs Read">
@@ -237,7 +237,7 @@
           </div>
           <br>
 
-          <button class="accordion">Compose</button>
+          <button type="button" class="accordion">Compose</button>
           <div class="section">
             <p class="aboutFunction">This is the button you click if you want to write an email, the following image is what will appear after you click compose(minus the red text).</p>
             <img src="/images/gmail/gmCompose.png" class="descriptionImage" alt="Compose Email">
@@ -248,14 +248,14 @@
           </div>
           <br>
 
-          <button class="accordion">Mail</button>
+          <button type="button" class="accordion">Mail</button>
           <div class="section">
             <p class="aboutFunction">Your app will always open on the mail tab as the default. The main use for this button is to bring you can to this page when you click the "Meet" button next to it.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Meet</button>
+          <button type="button" class="accordion">Meet</button>
           <div class="section">
             <p class="aboutFunction">Google Meet is a type video chat with multiple other people. If you would like to host a meeting, you will be given a code to send to other people that would like to join your meeting. The code acts as a key of some sorts, it's what they enter so they can join your specific meeting. If you are given the code and would like to join someone elses meeting click the "Join with a code" button, which you then enter the code you recieved.</p>
             <br>
@@ -279,23 +279,23 @@
       });
 
       //Shows the area in image map when clicked
-      $('.imageMapCoords').click(function(e) {
-        e.preventDefault();
-        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      $('.imageMapCoords').click(function(e) { //When an element with class="imageMapCoords" is clicked function e operates
+        e.preventDefault(); //The defult action is not implemented
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show(); //Shows the id with the same data-target
       })
 
-      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
-      var accordion = document.getElementsByClassName("accordion");
+      //Variables are set/decleared
+      var accordion = document.getElementsByClassName("accordion")
       var i;
-
-      for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener("click", function() {
-          this.classList.toggle("open");
-          var section = this.nextElementSibling;
-          if (section.style.maxHeight) {
-            section.style.maxHeight = null;
-          } else {
-            section.style.maxHeight = section.scrollHeight + "px";
+      //Shows the information in the accordion when header is clicked
+      for (i = 0; i < accordion.length; i++) { //Allows the function to loop so it can happen infinite amount of times
+        accordion[i].addEventListener("click", function() { //Accordion clicked
+          this.classList.toggle("open"); //Opens the accordion
+          var section = this.nextElementSibling; //Section is the following element
+          if (section.style.maxHeight) { //If the section is at max height the following is done
+            section.style.maxHeight = null; //Hides the information
+          } else { //When section is not at max height when heade clicked
+            section.style.maxHeight = section.scrollHeight + "px"; //Shows the information
           } 
         });
       }

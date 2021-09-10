@@ -47,7 +47,7 @@
             <p class="gap">...</p>
             <div class="container">
               <div class="centre">
-                <button class="buttons" onclick="imageMapFailed()">Click Here</button>
+                <button type="button" class="buttons" onclick="imageMapFailed()">Click Here</button>
               </div>
             </div>
             <br>
@@ -156,7 +156,7 @@
           <p class="gap">...</p>
           <div class="container">
             <div class="centre">
-              <button class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
+              <button type="button" class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
             </div>
           </div>
           <br>
@@ -169,14 +169,14 @@
         <div class="insideBox">
 
           <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
-          <button class="accordion">Help</button>
+          <button type="button" class="accordion">Help</button>
           <div class="section">
             <p class="aboutFunction">Clicking "Guide" in the top left corner, will bring up a detailed explanation of how this app works. There are four sections of instructions including recording vists, bluetooth tracing, contact alerts and retrace your steps. There is a large "Next" button to navigate through the pages, and if you want to need to go back to a previous page click the left arrow at the top of the page. Clicking the "X" at the top right will close the page and bring you back to the page shown in the image.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Diary</button>
+          <button type="button" class="accordion">Diary</button>
           <div class="section">
             <p class="aboutFunction">Your diary in the top right corner shows all places you have scanned into for the past two weeks. To add an entry to a previous date click "Add diary entry", this will bring you to same page as if you were to manually enter a vist.</p>
             <img src="/images/covidTracer/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
@@ -187,7 +187,7 @@
           </div>
           <br>
 
-          <button class="accordion">Camera</button>
+          <button type="button" class="accordion">Camera</button>
           <div class="section">
             <p class="aboutFunction">This is where your camera will appear, it will not be black. When you're trying to scan the QR Code try to align it in between the four corners. If the camera is not picking up the QR Code you can try turning on the torch, which is located below the right corner. Below is an example of a QR Code.</p>
             <img src="/images/covidTracer/ctQR.jpg" class="descriptionImage" alt="QR Code">
@@ -196,7 +196,7 @@
           </div>
           <br>
 
-          <button class="accordion">Manual Diary</button>
+          <button type="button" class="accordion">Manual Diary</button>
           <div class="section">
             <p class="aboutFunction">If you are unable to scan the code for whatever reason, clicking "Add a diary entry manually" gives you the option to enter your vist manually. The following image is what will be displayed when you click it:</p>
             <img src="/images/covidTracer/ctManualEntry.jpg" class="descriptionImage" alt="Manual Entry">
@@ -207,21 +207,21 @@
           </div>
           <br>
 
-          <button class="accordion">Dashboard</button>
+          <button type="button" class="accordion">Dashboard</button>
           <div class="section">
             <p class="aboutFunction">Located in the bottom left corner, the dashboard is a page of the latest announcements, what's new, tracing and latest updates around COVID-19 in New Zealand and the app. You can also click the "More info" tab at the top, which gives you more infomation on Alert Levels, Contact tracing, Vaccines and help with your mental wellbeing.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Record a Vist</button>
+          <button type="button" class="accordion">Record a Vist</button>
           <div class="section">
             <p class="aboutFunction">Located in the middle of the row of buttons at the bottom, this is the page the loads when you open the app and the one that is displayed in the image. This button allows you to return to this page if your on the Dashboard or Your Data.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">My Data</button>
+          <button type="button" class="accordion">My Data</button>
           <div class="section">
             <p class="aboutFunction">The My Data page is found in the bottom right corner, it contains multiple things including:</p>
             <p class="aboutFunction"><b>Information stored privately: </b>This includes your diary of vists, saved locations and your NHI number.</p>
@@ -249,23 +249,23 @@
       });
 
       //Shows the area in image map when clicked
-      $('.imageMapCoords').click(function(e) {
-        e.preventDefault();
-        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      $('.imageMapCoords').click(function(e) { //When an element with class="imageMapCoords" is clicked function e operates
+        e.preventDefault(); //The defult action is not implemented
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show(); //Shows the id with the same data-target
       })
 
-      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
-      var accordion = document.getElementsByClassName("accordion");
+      //Variables are set/decleared
+      var accordion = document.getElementsByClassName("accordion")
       var i;
-
-      for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener("click", function() {
-          this.classList.toggle("open");
-          var section = this.nextElementSibling;
-          if (section.style.maxHeight) {
-            section.style.maxHeight = null;
-          } else {
-            section.style.maxHeight = section.scrollHeight + "px";
+      //Shows the information in the accordion when header is clicked
+      for (i = 0; i < accordion.length; i++) { //Allows the function to loop so it can happen infinite amount of times
+        accordion[i].addEventListener("click", function() { //Accordion clicked
+          this.classList.toggle("open"); //Opens the accordion
+          var section = this.nextElementSibling; //Section is the following element
+          if (section.style.maxHeight) { //If the section is at max height the following is done
+            section.style.maxHeight = null; //Hides the information
+          } else { //When section is not at max height when heade clicked
+            section.style.maxHeight = section.scrollHeight + "px"; //Shows the information
           } 
         });
       }

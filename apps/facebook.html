@@ -10,7 +10,7 @@
     <link href="/stylesheet/apps.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for the apps used-->
     <link href="/stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
     <script src="../script.js" type="text/javascript"></script> <!--Javascipt used bewtween multiple pages-->
-  </head>
+  </head> 
 
   <body>
 
@@ -47,19 +47,19 @@
             <p class="gap">...</p>
             <div class="container">
               <div class="centre">
-                <button class="buttons" onclick="imageMapFailed()">Click Here</button>
+                <button type="button" class="buttons" onclick="imageMapFailed()">Click Here</button>
               </div>
             </div>
             <br>
           </div>
 
           <!--Different section explanations that are displayed when the user clicks the corresponding coordinates on the image map. Some sections contain images for extra details or links to the Facebook help page if necessary.-->
-          <div class="areaDescription" id="fbHomePage">
+          <div class="areaDescription" id="fbHomePage"> <!--The id links with the data-target in the image map-->
             <h3>Home Page.</h3>
             <hr>
             <p class="aboutFunction">The image shown is showing the Facebook home page. The home page is where you can find the latest updates from your friends and family, make posts and join rooms.</p>
             <p class="aboutFunction">The page at the top that is blue is the page you're currently on, this can help you distinguish what one you have open.</p>
-            <img src="/images/facebook/fbTopButtons.jpg" class="descriptionImage" alt="Top buttons">
+            <img src="/images/facebook/fbTopButtons.jpg" class="descriptionImage" alt="Top buttons"> <!--Example images of the function-->
             <br>
           </div>
 
@@ -122,19 +122,16 @@
             <h3>Profile.</h3>
             <hr>
             <p class="aboutFunction">Your profile is how other Facebook users perceive you. You are able to change your profile picture, cover image and details that are describe you.</p>
+            <!--Example of where each of the parts relate to.-->
+            <img src="/images/facebook/fbProfileExample.png" class="descriptionImage" alt="Profile Example">
             <p class="aboutFunction">Use the following buttons to navigate between the different functions of your profile.</p>
             <!--Buttons to navigate between the following information sections, otherwise the page would be to long-->
             <div class="container">
               <div class="centre">
-                <button class="directionButtons" data-target="profileBeginning">1</button>
-                <button class="directionButtons" data-target="profileOne">2</button>
-                <button class="directionButtons" data-target="profileTwo">3</button>
-                <button class="directionButtons" data-target="profileThree">4</button>
+                <button type="button" class="directionButtons" data-target="profileOne">1</button>
+                <button type="button" class="directionButtons" data-target="profileTwo">2</button>
+                <button type="button" class="directionButtons" data-target="profileThree">3</button>
               </div>
-            </div>
-            <div class="profile" id="profileBeginning">
-              <!--Example of where each of the parts relate to.-->
-              <img src="/images/facebook/fbProfileExample.png" class="descriptionImage" alt="Profile Example">
             </div>
             <div class="profile" id="profileOne">
               <div class="coverImage" id="coverImage">
@@ -282,7 +279,7 @@
           <p class="gap">...</p>
           <div class="container">
             <div class="centre">
-              <button class="buttons" onclick="GoBack()">Click Here</button> <!--Try image map again-->
+              <button type="button" class="buttons" onclick="goBack()">Click Here</button> <!--Try image map again-->
             </div>
           </div>
           <br>
@@ -295,7 +292,7 @@
         <div class="insideBox">
 
           <!--Each section are now in an accordion. The information about each part will be displayed when the header is clicked. These parts have the EXACT SAME information as the descriptions above.-->
-          <button class="accordion">Home Page</button>
+          <button type="button" class="accordion">Home Page</button>
           <div class="section">
             <p class="aboutFunction">The image shown is showing the Facebook home page. The home page is where you can find the latest updates from your friends and family, make posts and join rooms.</p>
             <p class="aboutFunction">The page at the top that is blue is the page you're currently on, this can help you distinguish what one you have open.</p>
@@ -304,7 +301,7 @@
           </div>
           <br>
 
-          <button class="accordion">Friend Requests</button>
+          <button type="button" class="accordion">Friend Requests</button>
           <div class="section">
             <p class="aboutFunction">The friend request page is where you you can find four of the following aspects:</p>
             <img src="/images/facebook/fbFriendRequests.jpg" class="descriptionImage" alt="Friend Requests">
@@ -316,7 +313,7 @@
           </div>
           <br>
 
-          <button class="accordion">Notifications</button>
+          <button type="button" class="accordion">Notifications</button>
           <div class="section">
             <p class="aboutFunction">This page has a all notifications you recieve from Facebook. You can get notifications for friend requests, comments on your post and when other people tagging/mentioning you in their post. Notifications that have a light blue tint to their background means you have not seen it and clicking the notification will make this disapear.</p>
             <img src="/images/facebook/fbNotifications.png" class="descriptionImage" alt="Notifications">
@@ -325,7 +322,7 @@
           </div>
           <br>
 
-          <button class="accordion">Settings</button>
+          <button type="button" class="accordion">Settings</button>
           <div class="section">
             <p class="aboutFunction">Settings help you control multiple things on your Facebook account whether it be your friends, groups your in, memories of past posts or Events. This page has alot of information that would be slightly confusing for a few words to explain. Clicking the following button will bring you to Facebooks help page that will provide you with further details.</p>
             <div class="container">
@@ -337,14 +334,14 @@
           </div>
           <br>
 
-          <button class="accordion">Search</button>
+          <button type="button" class="accordion">Search</button>
           <div class="section">
             <p class="aboutFunction">The search button is pretty simple to use, clicking it will display your keyboard. You are then able to search for people you want to friend, groups you want to join or pages to like/follow. Your recent searches and pages you have visted will be displayed under the search bar, to clear these click "See All" then "Clear All".</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Messenger</button>
+          <button type="button" class="accordion">Messenger</button>
           <div class="section">
             <p class="aboutFunction">Messenger is facebooks messenging app, clicking the button will bring to the that app. The following button will bring you to a page that has instructions for that app.</p>
             <div class="container">
@@ -356,7 +353,7 @@
           </div>
           <br>
 
-          <button class="accordion">Profile</button>
+          <button type="button" class="accordion">Profile</button>
           <div class="section">
             <p class="aboutFunction">Your profile is how other Facebook users perceive you. You are able to change your profile picture, cover image and details that are describe you.</p>
               <img src="/images/facebook/fbProfileExample.png" class="descriptionImage" alt="Profile Example">
@@ -391,7 +388,7 @@
           </div>
           <br>
 
-          <button class="accordion">Write Post</button>
+          <button type="button" class="accordion">Write Post</button>
           <div class="section">
             <p class="aboutFunction">When you click the "What's on your mind?" box on your home page, you are brought to a new area that allows you to type or click on of the following options.</p>
             <p class="gap">...</p>
@@ -410,7 +407,7 @@
           </div>
           <br>
 
-          <button class="accordion">Create Room</button>
+          <button type="button" class="accordion">Create Room</button>
           <div class="section">
             <p class="aboutFunction">Create a video chat for your Facebook friends to join or a selected list of people. When you create a room it will be displayed at the top of your homepage, which others can join in it. For more informations please click the following button.</p>
             <div class="container">
@@ -422,7 +419,7 @@
           </div>
           <br>
 
-          <button class="accordion">Post Story</button>
+          <button type="button" class="accordion">Post Story</button>
           <div class="section">
             <p class="aboutFunction">Stories are a way to post photos, short video, voting polls and more for a limited amount of time. Stories are avaliable for your friends to see for 24 hours, after this time it will disapear. The following features are what type of stories you can post.</p>
             <p class="aboutFunction"><b>Text: </b>This is just plain text on a coloured background of your choice. You are also able to change the font of your text.</p>
@@ -436,14 +433,14 @@
           </div>
           <br>
 
-          <button class="accordion">View Friends Story</button>
+          <button type="button" class="accordion">View Friends Story</button>
           <div class="section">
             <p class="aboutFunction">When your friends have posted a story it will be displayed at the top of your homepage. You are able to see their post without clicking it, however, for a more clearer view or if your friend has posted more than one story you will have to click it. When on it you can reply or react to it, and if you would like to exit it there is a cross button in the top right that closes the story.</p>
             <br>
           </div>
           <br>
 
-          <button class="accordion">Friends Post</button>
+          <button type="button" class="accordion">Friends Post</button>
           <div class="section">
             <p class="aboutFunction">When your friends post something new on Facebook it will be displayed on your home page. These posts can include; photos, videos, links or simply just text. Your friends profile picture, name and when they made the post will be displayed on the top right of their post. They are also able to tag other people, or a location they were at, this will be displayed next to their name.</p>
             <p class="aboutFunction">Sometimes you may see posts from people you aren't friends with, this is becasue a friend of yours has either been tagged or commented on their post.</p>
@@ -473,33 +470,32 @@
       });
 
       //Shows the area in image map when clicked
-      $('.imageMapCoords').click(function(e) {
-        e.preventDefault();
-        $(".areaDescription").hide().filter('#' + $(this).data('target')).show();
+      $('.imageMapCoords').click(function(e) { //When an element with class="imageMapCoords" is clicked function e operates
+        e.preventDefault(); //The defult action is not implemented
+        $(".areaDescription").hide().filter('#' + $(this).data('target')).show(); //Shows the id with the same data-target
       })
 
-      //Shows the area in image map when clicked ///////
-      $('.directionButtons').click(function(e) {
-        e.preventDefault();
-        $(".profile").hide().filter('#' + $(this).data('target')).show();
+      //Shows the part in the profile section when numbers are clicked
+      $('.directionButtons').click(function(e) { //When an element with class="directionButtons" is clicked function e operates
+        e.preventDefault(); //The defult action is not implemented
+        $(".profile").hide().filter('#' + $(this).data('target')).show(); //Shows the id with the same data-target
       })
 
-      //Example of accordion from: https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_accordion_animate
-      var accordion = document.getElementsByClassName("accordion");
+      //Variables are set/decleared
+      var accordion = document.getElementsByClassName("accordion")
       var i;
-
-      for (i = 0; i < accordion.length; i++) {
-        accordion[i].addEventListener("click", function() {
-          this.classList.toggle("open");
-          var section = this.nextElementSibling;
-          if (section.style.maxHeight) {
-            section.style.maxHeight = null;
-          } else {
-            section.style.maxHeight = section.scrollHeight + "px";
+      //Shows the information in the accordion when header is clicked
+      for (i = 0; i < accordion.length; i++) { //Allows the function to loop so it can happen infinite amount of times
+        accordion[i].addEventListener("click", function() { //Accordion clicked
+          this.classList.toggle("open"); //Opens the accordion
+          var section = this.nextElementSibling; //Section is the following element
+          if (section.style.maxHeight) { //If the section is at max height the following is done
+            section.style.maxHeight = null; //Hides the information
+          } else { //When section is not at max height when heade clicked
+            section.style.maxHeight = section.scrollHeight + "px"; //Shows the information
           } 
         });
       }
-
     </script>
   </body>
 </html>

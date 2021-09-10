@@ -1,120 +1,292 @@
 <!DOCTYPE html>
 
 <html lang="en">
-   <head>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>Phone Help</title>
-      <link rel="shortcut icon" type="image/x-icon" href="images/shortcutIconPhone.png">
-      <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
-      <link href="stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/>
-      <script src="script.js"></script>
-   </head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phone Help</title> <!--Text displayed on the broweser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="images/shortcutIconPhone.png"> <!--Icon displayed on the browser tab-->
+    <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/> <!--Original stylesheet used one all pages-->
+    <link href="stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Link to stylesheet for icons-->
+  </head>
 
-   <body>
-      <!--Navigation-->
-      <img alt="Computer Image" class="headerImage" src="../images/headerImage.png" style="height:20rem; width:100%;">
-      <img alt="Computer Image" class="headerImage2" src="../images/headerImage2.png" style="height:25rem; width:100%;">
-      <nav>
-         <div class="navText">PHONE HELP</div>
-         <a href="../helpPage.html">HELP</a>
-         <a href="../index.html">HOME</a>
-      </nav>
-      <h2 class="headerText">Phone Help.</h2>
+  <body>
 
-      <!--Help button-->
-      <a class="helpButton" href="../helpPage.html">?</a>
+    <!--Navigation-->
+    <!--Two images depending on size of the page-->
+    <img alt="Computer Image" class="headerImage" src="../images/headerImage.png" style="height:20rem; width:100%;">
+    <img alt="Computer Image" class="headerImage2" src="../images/headerImage2.png" style="height:25rem; width:100%;">
+    <nav>
+      <div class="navText">PHONE HELP</div> <!--Name of the page-->
+      <a href="../contact.html">CONTACT</a> <!--Link to contact page-->
+      <a href="../helpPage.html">HELP</a> <!--Link to the help page-->
+      <a href="../index.html">HOME</a> <!--Link to the home page-->
+    </nav>
+    <h2 class="headerText">Phone Help.</h2> <!--Text on header image-->
 
-      <!--Popup-->
-      <div class="popup" id="popup">
-         <div class="centre">
-            <div class="popupContent">
-               <h2>WELCOME.</h2>
-               <hr>
-               <p>If you are confused about functioning this website, click the 'HELP' button in the navigation bar or the question mark button down the bottom. These buttons will lead you to a page that will break down how to use this website.</p>
-               <p>Click the button below to leave this message and carry on to the website.</p>
-               <div class="container">
-                  <div class="centre">
-                     <button class="buttons" onclick="closePopup()">CLICK HERE</button>
-                  </div>
-               </div>
-               <br>
+    <!--Help button-->
+    <a class="helpButton" href="../helpPage.html">?</a> <!--Second help page link-->
+
+    <!--Popup-->
+    <div class="popup" id="popup">
+      <div class="centre">
+        <div class="popupContent">
+          <h2>WELCOME.</h2>
+          <hr>
+          <p>If you are confused about functioning this website, click the 'HELP' button in the navigation bar or the question mark button down the bottom. These buttons will lead you to a page that will break down how to use this website.</p>
+          <p>Click the button below to leave this message and carry on to the website.</p>
+          <div class="container"> <!--Container around element wanted centred-->
+            <div class="centre"> <!--Centers the element-->
+              <button type="button" class="buttons" onclick="closePopup()">CLICK HERE</button> <!--Close the popup-->
             </div>
-         </div>
+          </div>
+          <br>
+        </div>
+      </div>
+    </div>
+
+    <!--Padding around the page-->
+    <div class="padding">
+      <!--Description-->
+      <p class="description">This website is designed to help you with operating your mobile phone, whether it be a new device or something on your current device that you're struggling with. This website has two sections, the first is an explanation of pre-installed apps on your specific phone brand, and the second is popular/useful apps that can be downloaded from the App Store or Google Play.</p>
+      <br><br><hr><br>
+    
+      <!--Search-->
+      <p class="title" style="text-align:center;">SAMSUNG.</p>
+      <p class="description">The following function has two ways of operating. You can either search for the app in the search bar, or you use the horizontal scroll bar. Once you have found your desired app, clicking it will display a breif explanation in the box below of how it works.</p>
+      <br>
+      
+      <div class="searchContainer">
+        <i class="fa fa-search searchIcon"></i> <!--Search Icon-->
+        <input type="text" id="mySearch" onkeyup="searchBar()" placeholder="Search..." title="Type an app"> <!--Search bar, type="text" allows for input, when search bar is clicked searchBar() is implemented. The place holder disapears after text typed-->
       </div>
 
-      <!--Padding around the page-->
-      <div class="padding">
-
-         <!--Description-->
-         <p class="description">This website is designed to help you with operating your mobile phone, whether it be a new device or something on your current device that you're struggling with. This website has two sections, the first has popular/useful apps that you may need help with, and the second is a quiz that you can take to determine your phone type to get specified instructions to operate pre-installed apps.</p>
-        <br><br><hr><br>
-
-        <!--Apps-->
-        <div class="sectionOneApps">
-          <div class="title">APPS.</div>
-          <br>
-
-          <!--Facebook-->
-          <div class="aroundApp">
-              <div class="app">
-                <a href="apps/facebook.html" style="text-decoration: none;">
-                    <img src="../images/facebook/fbLogo.png" alt="Facebook" width="600" height="400">
-                    <div class="appName">Facebook</div>
-                </a>
-              </div>
+      <div class="centreApps"> <!--Centres apps-->
+        <div id="preApps">
+          <div class="piApps"> <!--Pre-installed apps-->
+            <img src="../images/samsung/ssCalculator.png" class="searchImage" id="calculators" data-target="calculator" onclick="hideDescription()" alt="Calculator Icon"> <!--Image icon, data-target used in JS to show coressponding id-->
           </div>
-
-          <!--Gmail-->
-          <div class="aroundApp">
-              <div class="app">
-                <a href="apps/gmail.html" style="text-decoration: none;">
-                    <img src="../images/gmail/gmLogo.png" alt="Gmail" width="600" height="400">
-                    <div class="appName">Gmail</div>
-                </a>
-              </div>
+          <div class="piApps">
+            <img src="../images/samsung/ssCalendar.jpg" class="searchImage" id="calendaragendatimetable" data-target="calendar" onclick="hideDescription()" alt="Calendar Icon">
           </div>
-
-          <!--Messenger-->
-          <div class="aroundApp">
-              <div class="app">
-                <a href="apps/messenger.html" style="text-decoration: none;">
-                    <img src="../images/messenger/mLogo.png" alt="Messanger" width="600" height="400"> 
-                    <div class="appName">Messenger</div>
-                </a>
-              </div>
+          <div class="piApps">
+            <img src="../images/samsung/ssCamera.png" class="searchImage" id="camerarecordervideophoto" data-target="camera" onclick="hideDescription()" alt="Camera Icon">
           </div>
-
-          <!--NZ Herald-->
-          <div class="aroundApp">
-              <div class="app">
-                <a href="apps/herald.html" style="text-decoration: none;">
-                    <img src="../images/herald/nzhLogo.jpg" alt="Herald" width="600" height="400">
-                    <div class="appName">Herald</div>
-                </a>
-              </div>
+          <div class="piApps">
+            <img src="../images/samsung/ssContacts.png" class="searchImage" id="contacts" data-target="contact" onclick="hideDescription()" alt="Contacts Icon">
           </div>
+          <div class="piApps">
+            <img src="../images/samsung/ssGallery.png" class="searchImage" id="galleryphotos" data-target="gallery" onclick="hideDescription()" alt="Gallery Icon">
+          </div>
+          <div class="piApps">
+            <img src="../images/samsung/ssMessages.png" class="searchImage" id="messageschat" data-target="messages" onclick="hideDescription()" alt="Messages Icon">
+          </div>
+          <div class="piApps">
+            <img src="../images/samsung/ssPhone.png" class="searchImage" id="phonecall" data-target="phone" onclick="hideDescription()" alt="Phone Icon">
+          </div>
+          <div class="piApps">
+            <img src="../images/samsung/ssPlayStore.png" class="searchImage" id="playstoreapps" data-target="playStore" onclick="hideDescription()" alt="Play Store Icon">
+          </div> 
+        </div>
+      </div>
 
-          <!--NZ COVID Tracer-->
-          <div class="aroundApp">
-              <div class="app">
-                <a href="apps/covidTracer.html" style="text-decoration: none;">
-                    <img src="../images/covidTracer/ctLogo.jpg" alt="Covid Tracer App" width="600" height="400"> 
-                    <div class="appNameDisplayed">Covid Tracer</div>
-                    <div class="appNameHidden">Tracer</div>
-                </a>
-              </div>
+      <!--Description of the pre-installed apps-->
+      <div class="piBox">
+      
+        <p id="placeHolder">Description will appear here...</p> <!--Placeholder in the box before icon is clicked-->
+
+        <!--Calculator-->
+        <div class="piAppDescription" id="calculator">
+          <h3>CALCULATOR.</h3>
+          <p>Carry out calculations without the need for a physical calculator. The following functions are included in the app:</p>
+          <ul>
+            <li>To view your calculation history, click the clock on the right of the top row.</li>
+            <li>A unit converter is located located next to your history, this includes area, length, temperature, volume and more.</li>
+            <li>For a more complicated calculator, with functions such as exponents, square roots, you can either rotate your phone 90 degrees or click the button next to the unit converter.</li>
+          </ul>
+        </div>
+
+        <!--Calendar-->
+        <div class="piAppDescription" id="calendar">
+          <h3>CALENDAR.</h3>
+          <p>Personal calendar that you can carry around with you. The following functions are included in the app:</p>
+          <ul>
+            <li>Swiping left and right allows you to navigate betweenthe months of the year.</li>
+            <li>There are two ways you can add an event. The first is when there are no previous events on that day, you can simply click the date and you're brought to the "add event" tab. The second is when there is already another event on that day, when you click the date you will see a green plus button that allows you to add another event.</li>
+          </ul>
+        </div>
+
+        <!--Camera-->
+        <div class="piAppDescription" id="camera">
+          <h3>CAMERA.</h3>
+          <p>Take photos and videos on your phone, without the hassle  of carrying a camera. The following functions are included in the app:</p>
+          <ul>
+            <li>There is a row of different camera functions for you to choose from, swiping left and right on these allow you to change what you're gonna use.</li>
+            <li>To take a photo/video click the white circle at the bottom of the screen, this is the capture button.</li>
+            <li>You can take photos facing away from you(back camera) or photos towards you(front camera), to switch between these click the button next to capture.</li>
+          </ul>
+        </div>
+
+        <!--Contact-->
+        <div class="piAppDescription" id="contact">
+          <h3>CONTACTS.</h3>
+          <p>Store numbers from others so you don't have to remember them. The following functions are included in the app:</p>
+          <ul>
+            <li>To add a new contact, click the plus icon that appears near the top of the app. When adding a new contact fill out as much detail as you would like as it only needs one section to be filled in for it to save.</li>
+            <li>To edit a contact, select the person then tap edit. Make sure you remember to click 'Save' after you're finished.</li>
+            <li>If you wish to delete a contact select the desired contact. Click the three dots in the top corner and select delete.</li>
+          </ul>
+        </div>
+
+        <!--Gallery-->
+        <div class="piAppDescription" id="gallery">
+          <h3>GALLERY.</h3>
+          <p>View all your photos you've taken and sort them into folders. The following functions are included in the app:</p>
+          <ul>
+            <li>There are two ways you can view your photos. The first is where they are sorted date ascending. The second is when they're placed in albums.</li>
+            <li>To create a new album select the three vertical dots, you can then click "create album".</li>
+            <li>When you want to delete a single/multiple photo(s)simply hold down the image, you are then able to select any others you want to delete. When you're ready to delete them you can click the "delete" button at the bottom.</li>
+          </ul>
+        </div>
+
+        <!--Messages-->
+        <div class="piAppDescription" id="messages">
+          <h3>MESSAGES.</h3>
+          <p>Message people when and wherever you would like. The following functions are included in the app:</p>
+          <ul>
+            <li>To start a new chat after you've opened the messages app, select the blue speech bubble in the bottom right corner. After that you can either type the name of an existing contact or enter a new number, then click the typing section and enter your message.</li>
+            <li>To send an image or video, select your desired contact then at the bottom should be a image/camera icon clicking this will allow to send a photo.</li>
+            <li>Hold down a message to display further options you can do with it. This includes deleting the message, after you delete a message you are unable to retrieve it.</li>
+          </ul>
+        </div>
+
+        <!--Phone-->
+        <div class="piAppDescription" id="phone">
+          <h3>PHONE.</h3>
+          <p>The phone app contains multiple function split between three tabs at the bottom of the screen that are useful to know how to use:</p>
+          <ul>
+            <li><b>Keypad -  </b>This allows you to type in new numbers that you haven't previously saved. You can also use the keypad to search for contact names.</li>
+            <li><b>Recents -  </b>These are the calls that you have either recently made or recently recieved. If there is a green arrow pointing away the phone icon this indicates you made the call while a grey arrow pointing toward the phone means you recieved the call.</li>
+            <li><b>Contacts -  </b>This is the same as the contacts app, it displays all your contacts. When you select someones name you will be able to either, call, message or video chat someone depending on which icon you click.</li>
+          </ul>
+        </div>
+
+        <!--Play Store-->
+        <div class="piAppDescription" id="playStore">
+          <h3>PLAY STORE.</h3>
+          <p>Download different types of apps for your phone. The following functions are included in the app:</p>
+          <ul>
+            <li>To download an app, enter either keywords or the name of the app. This will provide you with a list of recommended apps that you can download by clicking on the desired one.</li>
+            <li>At the bottom of the page you are able to change between Games, Apps, Movies and Books. This will change the home page to related apps that you can browse through.</li>
+          </ul>
+        </div>
+            
+      </div>
+      <br><hr><br>
+  
+      <!--Apps-->
+      <div class="sectionApps">
+        <p class="title">APPS.</p>
+        <br>
+
+        <!--Facebook-->
+        <div class="aroundFunction"> <!--Area around the following div-->
+          <div class="function"> <!--Around the logo and app name-->
+            <a href="apps/facebook.html" style="text-decoration: none;"> <!--Link to the corresponding page-->
+              <img src="../images/facebook/fbLogo.png" alt="Facebook" width="600" height="400"> <!--Logo-->
+              <p class="appName">Facebook</p> <!--App name-->
+            </a>
           </div>
         </div>
 
-        <p class="gap">...</p>
-        <br><br><hr><br>
+        <!--Gmail-->
+        <div class="aroundFunction">
+          <div class="function">
+            <a href="apps/gmail.html" style="text-decoration: none;">
+              <img src="../images/gmail/gmLogo.png" alt="Gmail" width="600" height="400">
+              <p class="appName">Gmail</p>
+            </a>
+          </div>
+        </div>
+        
+        <!--Messenger-->
+        <div class="aroundFunction">
+          <div class="function">
+            <a href="apps/messenger.html" style="text-decoration: none;">
+              <img src="../images/messenger/mLogo.png" alt="Messanger" width="600" height="400"> 
+              <p class="appName">Messenger</p>
+            </a>
+          </div>
+        </div>
 
-         <!--Quiz-->
-         <div class="title">QUIZ.</div>
-         <br>
-         <p class="description">.....</p>
+        <!--NZ Herald-->
+        <div class="aroundFunction">
+          <div class="function">
+            <a href="apps/herald.html" style="text-decoration: none;">
+              <img src="../images/herald/nzhLogo.jpg" alt="Herald" width="600" height="400">
+              <p class="appName">Herald</p>
+            </a>
+          </div>
+        </div>
 
-      </div>
-   </body>
+        <!--NZ COVID Tracer-->
+        <div class="aroundFunction">
+          <div class="function">
+            <a href="apps/covidTracer.html" style="text-decoration: none;">
+              <img src="../images/covidTracer/ctLogo.jpg" alt="Covid Tracer App" width="600" height="400"> 
+              <p class="appNameDisplayed">Covid Tracer</p>
+              <p class="appNameHidden">Tracer</p>
+            </a>
+          </div>
+        </div>
+      </div>      
+
+    </div>
+
+    <!--Importing jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+      
+    <script>
+      //Popup at the beginning of the website
+      setTimeout(function(){
+        document.getElementById('popup').style.display = "block";
+      }, 2700); //Changes the popups diaplay to block after 2700 milliseconds
+
+      //Closes popup at the beginning of the website
+      function closePopup() {
+        document.getElementById("popup").style.display = "none"; //Closes the popup when close button is clicked
+      }
+      
+      //Filter in the search bar
+      function searchBar() {
+        var input, filter, icon, img, i, text; //Variables used below
+        input = document.getElementById('mySearch'); //Input variable is the id mySearch
+        filter = input.value.toUpperCase(); //What is entered in the search bar is read as all capitals
+        icon = document.getElementsByClassName('piApps'); //Icon variable is the all the elements that have the "piApps" class
+
+        for (i = 0; i < icon.length; i++) { //Allows the variable to be executed each time an icon is clicked
+          img = icon[i].getElementsByTagName("img")[0]; //The icons are made the variable img
+          text = img.id || img.innerText; //Variable is the texts id or it's inner text
+          if (text.toUpperCase().indexOf(filter) > -1) { //The image id mathes the input in the filter
+            icon[i].style.display = ""; //Does nothing to the icon when a word in the id is typed
+          } 
+          else {
+            icon[i].style.display = "none"; //Hides the icons that don't contain any of the words in the id
+          }
+        }
+      }
+
+      //when the icon is clicked the element with the same id as the data-target will appear
+      $('.searchImage').click(function(e) { //When elements with the class="searchImage" is clicked function e operates
+          e.preventDefault(); //The defult action is not implemented
+          $(".piAppDescription").hide().filter('#' + $(this).data('target')).show(); //Shows the id with the same data-target
+        })
+
+      //Hides the text in description box 
+      function hideDescription() {
+        document.getElementById("placeHolder").style.display = "none"; //When the function with onlick="hideDescription()" is clicked placeHolder is hidden
+      }
+    </script>
+  </body>
 </html>

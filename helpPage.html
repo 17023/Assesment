@@ -4,29 +4,30 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Phone Help</title>
-    <link rel="shortcut icon" type="image/x-icon" href="images/shortcutIconPhone.png">
-    <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/>
-    <link href="stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/>
-    <script src="script.js"></script>
+    <title>Phone Help</title> <!--Text displayed on the broweser tab-->
+    <link rel="shortcut icon" type="image/x-icon" href="images/shortcutIconPhone.png"> <!--Icon displayed on the browser tab-->
+    <link href="stylesheet/style.css" rel="stylesheet" type="text/css"/> <!--Original stylesheet used one all pages-->
+    <link href="stylesheet/screenSizes.css" rel="stylesheet" type="text/css"/> <!--Stylesheet for different sized screens-->
   </head>
 
   <body>
 
     <!--Navigation-->
+    <!--Two images depending on size of the page-->
     <img alt="Computer Image" class="headerImage" src="../images/headerImage.png" style="height:20rem; width:100%;">
     <img alt="Computer Image" class="headerImage2" src="../images/headerImage2.png" style="height:25rem; width:100%;">
     <nav>
-      <div class="navText">PHONE HELP</div>
-      <a href="../helpPage.html">HELP</a>
-      <a href="../index.html">HOME</a>
+      <div class="navText">PHONE HELP</div> <!--Name of the page-->
+      <a href="../contact.html">CONTACT</a> <!--Link to contact page-->
+      <a href="../helpPage.html">HELP</a> <!--Link to the help page-->
+      <a href="../index.html">HOME</a> <!--Link to the home page-->
     </nav>
-    <h2 class="headerText">Help Page.</h2>
+    <h2 class="headerText">Help Page.</h2> <!--Text on header image-->
 
     <!--Padding around the page-->
     <div class="padding">
 
-      <!--How to use button-->
+      <!--Explanation on how to use button-->
       <div class="buttonHelp">
         <h2>HOW TO USE A BUTTON.</h2>
         <br><br><br>
@@ -34,21 +35,26 @@
         <br>
         <p><b>Phone/Tablet:</b> Use your finger to click the middle of the button, if this doesn't work try clicking the button once again, then it should work.</p>
         <br>
-        <p>To make this easier for you to use, all buttons used throughout this website look like the example below.</p>
+        <p>To make this easier for you to use, majority of buttons used throughout this website look like the example below.</p>
         <br>
+        <!--Centres button-->
         <div class="container">
           <div class="centre">
-            <button class="buttons" onclick="buttonPopup()">CLICK HERE</button>
+            <button type="button" class="buttons" onclick="buttonPopup()">CLICK HERE</button>
           </div>
         </div>
-        <div id="examplePopup">CONGRATULATIONS!</div>
+        <div id="examplePopup">CONGRATULATIONS!</div> <!--Displays after button is clicked-->
       </div>
-      <br><hr><br>
-      <div class="imageMapHelp">
-
-      </div>
-
     </div>
+
+    <script>
+      //How to use button
+      function buttonPopup() {
+        var x = document.getElementById("examplePopup"); //Variable x is the element that has the id "examplePopup"
+        x.className = "show"; //The class of x is show
+        setTimeout(function(){ x.className = x.className.replace("show", "");}, 2500); //After 2500 milliseconds the class of x is replaced with show
+      }
+      </script>
 
   </body>
 </html>
