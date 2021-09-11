@@ -399,3 +399,40 @@ nav a:hover {border-bottom: 0.25rem solid rgb(26, 23, 57);}
   from {bottom: 30px; opacity: 1;} 
   to {bottom: 0; opacity: 0;}
 }
+
+/*CONTACT PAGE*/
+.contactQuestion {
+  margin: 2px 2.5%;
+}
+
+.inputFieldHalf {
+  width: 30%;
+  height: 2rem;
+  border: 1px solid rgb(24, 25, 26);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.inputFieldFull {
+  width: 95%;
+  height: 2rem;
+  margin: 0.3rem 2.5%;
+  border: 1px solid rgb(24, 25, 26);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+.inputFieldFull:focus, .inputFieldHalf:focus { 
+    outline: none;
+    border-color: rgb(24, 25, 26);
+    box-shadow: 0 0 10px rgb(173, 186, 189);
+ }
+
+ .form {
+   padding: 1rem 0;
+   background-color: rgb(246, 246, 246);
+ }
+
+textarea {
+  resize: vertical;
+}

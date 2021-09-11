@@ -23,7 +23,7 @@
       <a href="../helpPage.html">HELP</a> <!--Link to the help page-->
       <a href="../index.html">HOME</a> <!--Link to the home page-->
     </nav>
-    <h2 class="headerText">Phone Help.</h2> <!--Text on header image-->
+    <h2 class="headerText">Contact Page.</h2> <!--Text on header image-->
 
     <!--Help button-->
     <a class="helpButton" href="../helpPage.html">?</a> <!--Second help page link-->
@@ -32,9 +32,35 @@
 
     <!--Padding around the page-->
     <div class="padding">
-      <input type="dates" placeholder="Enter your last name..." id="lastName" />
-      <input type="text" placeholder="..." class="...">
-
+      <form onsubmit="return false" class="form">
+        <span class="contactQuestion">Name:</span>
+        <br>
+        <input type="text" placeholder="First" id="firstName" class="inputFieldHalf" style="margin: 0.3rem 1rem 0.3rem 2.5%" />
+        <input type="dates" placeholder="Last" id="lastName" class="inputFieldHalf" style="margin: 0.3rem 0" />
+        <br><br>
+        <span class="contactQuestion">Email:</span>
+        <br>
+        <input type="email" placeholder="e.g. joanplum397@example.com" id="email" class="inputFieldFull" />
+        <br><br>
+        <span class="contactQuestion">What are you enquiring about?</span>
+        <br>
+        <select id="problem" class="inputFieldFull" >
+          <option disabled selected value> -- select a topic -- </option>
+          <option value="Facebook">Facebook</option>
+          <option value="Herald">NZ Herald</option>
+          <option value="Gmail">Gmail</option>
+        </select>
+        <br><br>
+        <span class="contactQuestion">Description of your problem:</span>
+        <br>
+        <textarea id="question" rows="4" class="inputFieldFull"></textarea>
+        <br><br>
+        <div class="container">
+          <div class="centre">
+            <button onclick="sendContact();" class="buttons">Submit</button>
+          </div>
+        </div>
+      </form>
     </div>
 
       
