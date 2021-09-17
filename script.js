@@ -1,4 +1,4 @@
-//Javascript at the bottom of HTML files as well.
+//Javascript at the bottom of all HTML files as well.
 //Hides beginning text when area(s) on image map clicked
 function beginningText() {
   document.getElementById("beginningText").style.display = "none";
